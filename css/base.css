@@ -1,0 +1,92 @@
+/* ============================================================
+   BASE — reset, defaults, global accessibility utilities
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: 9999;
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-accent);
+  color: #fff;
+  font-size: var(--text-sm);
+  font-family: var(--font-body);
+  border-radius: var(--radius-btn);
+  transition: top var(--transition);
+}
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* Focus visible */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Selection */
+::selection {
+  background: rgba(24, 58, 99, 0.15);
+  color: var(--color-text);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

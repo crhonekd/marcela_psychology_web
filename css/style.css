@@ -303,6 +303,7 @@
 .hero__content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;       /* children take natural width — button no longer stretches */
   padding: 0 0 0
     max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
 }

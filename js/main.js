@@ -1,5 +1,9 @@
 'use strict';
 
+/* Flip no-js → js so CSS can apply JS-only behaviors */
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
 /* ── Nav scroll state ────────────────────────────────────── */
 
 const nav = document.querySelector('.nav');
@@ -45,18 +49,23 @@ if (hamburger) {
 
 /* ── Scroll reveal (IntersectionObserver) ────────────────── */
 
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target); // fire once
-    }
-  });
-}, { threshold: 0.12 });
+const revealEls = document.querySelectorAll('[data-reveal]');
 
-document.querySelectorAll('[data-reveal]').forEach(el => {
-  revealObserver.observe(el);
-});
+if ('IntersectionObserver' in window) {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  revealEls.forEach(el => revealObserver.observe(el));
+} else {
+  // No IntersectionObserver support — reveal everything immediately
+  revealEls.forEach(el => el.classList.add('is-visible'));
+}
 
 /* ── Active nav link (smooth scroll sections) ────────────── */
 

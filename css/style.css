@@ -36,6 +36,18 @@
   opacity: 1;
   transform: translateY(0);
 }
+/* No-JS fallback: when scripts don't run, show everything immediately */
+.no-js [data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+/* Print / PDF rendering: always show everything */
+@media print {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
 [data-reveal][data-delay="100"] { transition-delay: 0.1s; }
 [data-reveal][data-delay="200"] { transition-delay: 0.2s; }
 [data-reveal][data-delay="300"] { transition-delay: 0.3s; }
@@ -103,6 +115,11 @@
   justify-content: space-between;
   gap: var(--space-8);
   padding: var(--space-5) var(--space-8);
+  /* Always sit on a subtle cream band so the hands image clearly sits below
+     the nav (matches the reference layout) */
+  background: rgba(246, 243, 239, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
   transition:
     background  var(--transition),
     box-shadow  var(--transition),
@@ -271,20 +288,24 @@
 /* ── Hero ────────────────────────────────────────────────── */
 
 .hero {
-  min-height: 100svh;
   display: grid;
-  grid-template-columns: 60fr 40fr;
-  align-items: stretch;
+  grid-template-columns: 5fr 6fr;
+  align-items: center;            /* center both columns vertically */
+  gap: var(--space-10);
+  /* Fills the viewport; svh = small-viewport-height handles mobile URL bars */
+  min-height: 100svh;
   overflow: hidden;
   background: var(--color-bg);
+  /* Top padding clears the fixed nav so the image stays below it */
+  padding-top: calc(var(--space-20) + 32px);
+  padding-bottom: var(--space-12);
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--space-24) + 80px) var(--space-12) var(--space-20);
-  padding-left: max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
+  padding: 0 0 0
+    max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
 }
 
 .hero__headline {
@@ -325,13 +346,22 @@
 .hero__image {
   position: relative;
   overflow: hidden;
+  width: 100%;
+  /* Match the native aspect ratio of hands.png (1095x428) so the entire
+     image displays with no cropping at any viewport width */
+  aspect-ratio: 1095 / 428;
+  /* Soft fade on the left edge so the cream-toned image blends into the
+     cream page background where it meets the headline text */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 100%);
+          mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 100%);
 }
 
 .hero__image img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: cover;       /* cover with matching aspect = full image, no crop */
+  object-position: center;
   transition: transform 0.8s ease-out;
 }
 .hero__image:hover img {
@@ -567,15 +597,20 @@
   /* Hero */
   .hero {
     grid-template-columns: 1fr;
-    min-height: auto;
+    min-height: auto;            /* drop full-viewport on stacked layout */
+    padding-top: calc(var(--space-16) + 32px);
+    padding-bottom: var(--space-12);
   }
   .hero__content {
-    padding: calc(var(--space-16) + 80px) var(--space-8) var(--space-12);
+    padding: var(--space-8) var(--space-8) 0;
   }
   .hero__image {
-    height: 55vw;
-    min-height: 300px;
-    order: -1; /* image above on tablet */
+    height: auto;
+    aspect-ratio: 1095 / 428;    /* native — full image visible */
+    width: 100%;
+    order: -1;                   /* image above on tablet */
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
   }
 
   /* Services */

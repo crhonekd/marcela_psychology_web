@@ -292,12 +292,11 @@
   grid-template-columns: 5fr 6fr;
   align-items: center;            /* center both columns vertically */
   gap: var(--space-10);
-  /* Fills the viewport; svh = small-viewport-height handles mobile URL bars */
-  min-height: 100svh;
   overflow: hidden;
   background: var(--color-bg);
-  /* Top padding clears the fixed nav so the image stays below it */
-  padding-top: calc(var(--space-20) + 32px);
+  /* Just enough top padding to clear the fixed nav (~70px) plus a small
+     breathing gap, matching the tight spacing in main_page.png */
+  padding-top: calc(var(--space-16) + 24px);
   padding-bottom: var(--space-12);
 }
 

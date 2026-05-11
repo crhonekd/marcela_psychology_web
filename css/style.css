@@ -330,7 +330,7 @@
   color: var(--color-text-muted);
   line-height: 1.5;
   max-width: 38ch;
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-4);
 }
 
 .hero__name {
@@ -340,7 +340,7 @@
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-text-muted);
-  margin-bottom: var(--space-8);
+  margin-bottom: var(--space-10);
 }
 
 .hero__image {

@@ -114,7 +114,11 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-8);
-  padding: var(--space-5) var(--space-8);
+  /* Symmetric padding clamped against a max content width so the menu sits
+     comfortably off the right edge on wide screens */
+  padding:
+    var(--space-5)
+    max(var(--space-10), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
   /* Always sit on a subtle cream band so the hands image clearly sits below
      the nav (matches the reference layout) */
   background: rgba(246, 243, 239, 0.85);
@@ -211,6 +215,30 @@
 .nav__lang a:hover { color: var(--color-accent); }
 .nav__lang a::after { display: none; }
 
+/* Contact link as a filled nav button (matches the hero CTA) */
+.nav__links a.nav__contact-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-accent);
+  color: #fff;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-btn);
+  letter-spacing: 0.03em;
+  font-weight: 500;
+  transition:
+    background var(--transition),
+    transform  var(--transition),
+    box-shadow var(--transition);
+}
+.nav__links a.nav__contact-btn::after { display: none; }
+.nav__links a.nav__contact-btn:hover,
+.nav__links a.nav__contact-btn:focus-visible {
+  background: var(--color-accent-hover);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 /* CTA in nav */
 .nav__cta {
   flex-shrink: 0;
@@ -277,6 +305,21 @@
     font-weight: 400;
   }
   .nav__links a::after { display: none; }
+  /* In the mobile overlay revert the contact button to a plain link */
+  .nav__links a.nav__contact-btn {
+    background: transparent;
+    color: var(--color-text);
+    padding: 0;
+    border-radius: 0;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .nav__links a.nav__contact-btn:hover {
+    background: transparent;
+    color: var(--color-accent);
+    transform: none;
+    box-shadow: none;
+  }
   .nav__lang {
     margin-top: var(--space-4);
   }
@@ -304,8 +347,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;       /* children take natural width — button no longer stretches */
-  padding: 0 0 0
-    max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
 }
 
 .hero__headline {

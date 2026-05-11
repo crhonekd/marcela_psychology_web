@@ -227,3 +227,45 @@ git add -A && git commit -m "chore: final QA pass and CLAUDE.md update"
 | 5. index.html | ✅ Complete |
 | 6. en.html | ✅ Complete |
 | 7. QA | ✅ Complete |
+
+---
+
+## Post-Build Iterations (design refinements after user review)
+
+These items were not in the original plan — they came out of iterative review
+against `main_page.png` after the initial build landed. Each was completed
+and committed.
+
+| # | Iteration | Commit | Notes |
+|---|-----------|--------|-------|
+| 1 | Logo redesign + nav band + image edge fade | (in `a8082ce`) | Replaced double-curve lotus with a refined single-leaf SVG. Gave the nav a default cream `backdrop-filter` background. Added `mask-image` left-edge gradient on `.hero__image` to blend the photo into the cream page bg. |
+| 2 | Hero image fully responsive | `a8082ce` | Removed fixed `min-height: 480px` on `.hero__image`. Added `min-height: 100svh` to the hero so it tracks viewport height fluidly. Added `no-js` HTML class + `@media print` fallback so revealed content renders even without JS. |
+| 3 | Hero image shows full picture | `a8082ce` | Wide-landscape `hands.png` (1095×428) was being cover-cropped to a portrait cell. Set `.hero__image` `aspect-ratio: 1095 / 428` so cover shows the full image at every viewport. |
+| 4 | Local hands photo | `a8082ce` | Moved user-supplied `hands.png` to `assets/images/hands.png` and wired it as the hero `src`. |
+| 5 | Match main_page.png hero order | `8a196ad` | Removed nav CTA button. Reordered hero: headline → subhead → name → button (was name → headline → subhead → button). |
+| 6 | Tighten hero top spacing | `c597099` | Removed `min-height: 100svh` + `align-items: center` combination that was pushing the headline ~30% down the viewport. Hero is now content-sized with modest top padding. |
+| 7 | Shrink hero CTA to content | `32e0735` | Added `align-items: flex-start` on `.hero__content` so children (especially the button) take natural width instead of being stretched. |
+| 8 | Contact nav button + menu spacing + `--space-5` fix | `b09d717` | Styled "Contact"/"Kontakt" as a dark navy filled button matching the hero CTA. Increased nav horizontal padding to content-width based padding. Added missing `--space-5: 1.25rem` token to `tokens.css` — undefined custom properties were silently zeroing several paddings (notably mobile hero left padding) by invalidating the entire `padding` shorthand. |
+
+## Verification Approach
+
+Visual changes are verified end-to-end using headless Chrome screenshots:
+
+```bash
+python3 -m http.server 8765 &
+# Per-viewport screenshots
+for w in 414 768 1024 1440 1920; do
+  google-chrome --headless --disable-gpu --no-sandbox --hide-scrollbars \
+    --window-size=$w,900 --virtual-time-budget=5000 \
+    --screenshot=/tmp/test_$w.png http://localhost:8765/index.html
+done
+# Full-page render
+google-chrome --headless --disable-gpu --no-sandbox \
+  --window-size=1440,900 --virtual-time-budget=6000 \
+  --print-to-pdf=/tmp/full.pdf --no-pdf-header-footer \
+  http://localhost:8765/index.html
+pdftoppm -r 65 -png /tmp/full.pdf /tmp/page
+```
+
+This caught the `--space-5` silent CSS bug that was invisible in code review
+but visibly broken in the rendered mobile output.

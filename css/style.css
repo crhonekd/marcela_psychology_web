@@ -142,38 +142,29 @@
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
   text-decoration: none;
   flex-shrink: 0;
+  height: 88px;
+  overflow: hidden;              /* crop the logo file's built-in whitespace */
+  transition: height var(--transition);
 }
 
-.nav__logo-icon {
-  width: 32px;
-  height: 32px;
-  color: var(--color-accent);
+.nav__logo-img {
+  display: block;
+  height: 180px;         /* artwork is ~49% of the file; scaling up + clip fills the box */
+  width: auto;
   flex-shrink: 0;
+  /* Logo art sits on a white field — multiply blends it into the cream nav band */
+  mix-blend-mode: multiply;
+  transition: height var(--transition);
 }
 
-.nav__logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+/* Condense the logo when the nav shrinks on scroll */
+.nav--scrolled .nav__logo {
+  height: 64px;
 }
-.nav__logo-text span:first-child {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-}
-.nav__logo-text span:last-child {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+.nav--scrolled .nav__logo-img {
+  height: 132px;
 }
 
 /* Links */
@@ -337,9 +328,9 @@
   gap: var(--space-10);
   overflow: hidden;
   background: var(--color-bg);
-  /* Just enough top padding to clear the fixed nav (~70px) plus a small
-     breathing gap, matching the tight spacing in main_page.png */
-  padding-top: calc(var(--space-16) + 24px);
+  /* Top padding clears the fixed nav (~128px with the larger logo) plus a
+     small breathing gap */
+  padding-top: calc(var(--space-24) + 48px);
   padding-bottom: var(--space-12);
 }
 
@@ -691,6 +682,14 @@
   /* Nav */
   .nav {
     padding: var(--space-4) var(--space-5);
+  }
+  .nav__logo,
+  .nav--scrolled .nav__logo {
+    height: 56px;
+  }
+  .nav__logo-img,
+  .nav--scrolled .nav__logo-img {
+    height: 115px;
   }
 
   /* Hero */

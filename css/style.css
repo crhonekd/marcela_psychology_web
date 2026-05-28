@@ -731,3 +731,255 @@
     align-items: flex-start;
   }
 }
+
+/* ============================================================
+   ABOUT PAGE — sub-page header, long-form prose, journey, CTA
+   ============================================================ */
+
+/* ── Page hero (centered sub-page header) ────────────────── */
+
+.page-hero {
+  background: var(--color-bg);
+  text-align: center;
+  padding-top: calc(var(--space-24) + 56px);   /* clear the fixed nav + breathing room */
+  padding-bottom: clamp(var(--space-12), 6vw, var(--space-16));
+}
+
+.page-hero__inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.page-hero__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  max-width: 20ch;
+  margin-inline: auto;
+}
+.page-hero__title em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Thin sage rule used as a quiet section divider accent */
+.rule {
+  width: 56px;
+  height: 2px;
+  border: none;
+  background: var(--color-sage);
+  margin: var(--space-8) auto 0;
+}
+
+/* ── Long-form prose ─────────────────────────────────────── */
+
+.prose p {
+  font-size: var(--text-base);
+  line-height: 1.85;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  max-width: 64ch;          /* keep lines to a comfortable reading measure */
+}
+.prose p:last-child { margin-bottom: 0; }
+
+.prose .lead {
+  font-size: var(--text-lg);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+/* ── Bio: portrait + intro text ──────────────────────────── */
+
+.bio {
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+}
+
+.bio__grid {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) 1fr;
+  gap: clamp(var(--space-8), 5vw, var(--space-16));
+  align-items: start;
+}
+
+.bio__media {
+  position: sticky;
+  top: calc(var(--space-16) + 24px);
+  margin: 0;
+}
+.bio__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+.bio__caption {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+/* ── Journey: image-led editorial column ─────────────────── */
+
+.journey {
+  background: var(--color-bg-secondary);
+  padding-block: clamp(var(--space-16), 9vw, var(--space-24));
+}
+
+.journey__inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.journey__header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-10), 5vw, var(--space-16));
+}
+.journey__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-5);
+}
+.journey__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-text);
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.journey__figure {
+  max-width: 440px;
+  margin: 0 auto clamp(var(--space-10), 5vw, var(--space-12));
+}
+.journey__figure img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.journey__prose {
+  max-width: 62ch;
+  margin-inline: auto;
+}
+.journey__prose p { color: var(--color-text); }
+
+/* ── Closing CTA (navy band) ─────────────────────────────── */
+
+.about-cta {
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
+  text-align: center;
+  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
+}
+
+.about-cta__inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-cta__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: var(--space-6);
+}
+
+.about-cta__title {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-dark-text);
+  max-width: 18ch;
+  margin-bottom: var(--space-6);
+}
+
+.about-cta__body {
+  font-size: var(--text-base);
+  line-height: 1.75;
+  color: rgba(249, 247, 244, 0.72);
+  max-width: 56ch;
+  margin-bottom: var(--space-10);
+}
+
+/* Light filled button — for use on the dark navy band */
+.btn--light {
+  background: var(--color-dark-text);
+  color: var(--color-accent);
+}
+.btn--light:hover,
+.btn--light:focus-visible {
+  background: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── About page responsive ───────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .bio__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .bio__media {
+    position: static;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero {
+    padding-top: calc(var(--space-16) + 72px);
+    padding-bottom: var(--space-10);
+  }
+  .bio {
+    padding-block: var(--space-12);
+  }
+  .journey {
+    padding-block: var(--space-12);
+  }
+}

@@ -72,6 +72,9 @@ dimensions) so the layout stays correct.
 - All `<script>` at end of `<body>` or `defer`
 - Google Fonts loaded with `preconnect` + `display=swap`
 
+## Always do first
+- ** invoke the 'frontend-design' skill ** before writing any frontend code, every session, no exceptions. 
+
 ## Design System Notes
 
 - **All design tokens** live in `css/tokens.css` — colors, fonts, fluid type

@@ -31,7 +31,13 @@
         <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
       </a>
 
-      <ul class="nav__links" role="list">
+      <ul class="nav__links" id="nav-links" role="list">
+        <li class="nav__close-item">
+          <button class="nav__close" aria-label="Close menu">
+            <span></span>
+            <span></span>
+          </button>
+        </li>
         <li><a href="about-en.html" aria-current="page">About me</a></li>
         <li><a href="en.html#services">Services</a></li>
         <li><a href="en.html#webinars">Webinars</a></li>
@@ -39,6 +45,8 @@
         <li><a href="en.html#contact" class="nav__contact-btn">Contact</a></li>
         <li class="nav__lang"><a href="about.html" hreflang="cs" aria-label="Přepnout do češtiny">CS</a></li>
       </ul>
+
+      <div class="nav__backdrop" aria-hidden="true"></div>
 
       <button
         class="nav__hamburger"

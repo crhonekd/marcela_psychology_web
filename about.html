@@ -31,7 +31,13 @@
         <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
       </a>
 
-      <ul class="nav__links" role="list">
+      <ul class="nav__links" id="nav-links" role="list">
+        <li class="nav__close-item">
+          <button class="nav__close" aria-label="Zavřít menu">
+            <span></span>
+            <span></span>
+          </button>
+        </li>
         <li><a href="about.html" aria-current="page">O mně</a></li>
         <li><a href="index.html#services">Služby</a></li>
         <li><a href="index.html#webinars">Webináře</a></li>
@@ -39,6 +45,8 @@
         <li><a href="index.html#contact" class="nav__contact-btn">Kontakt</a></li>
         <li class="nav__lang"><a href="about-en.html" hreflang="en" aria-label="Switch to English">EN</a></li>
       </ul>
+
+      <div class="nav__backdrop" aria-hidden="true"></div>
 
       <button
         class="nav__hamburger"

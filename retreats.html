@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="cs" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Retreats — Holistic Psychology by Marcela Crhonkova, MSc." />
-  <title>Retreats — Marcela Crhonkova, MSc.</title>
+  <meta name="description" content="Reset Retreat — terapeutický retreat pro ženy, které vstupují do nové životní etapy. Říjen 2026, Španělsko." />
+  <title>Reset Retreat — Marcela Crhonková, MSc.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,37 +16,44 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .retreat-details summary { list-style: none; cursor: pointer; }
+    .retreat-details summary::-webkit-details-marker { display: none; }
+    .retreat-details summary::after { content: '+'; font-family: var(--font-body); font-style: normal; font-size: 1.25rem; color: var(--color-text-muted); transition: transform var(--transition); line-height: 1; }
+    .retreat-details[open] summary::after { content: '−'; }
+  </style>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Přejít na obsah</a>
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="en.html" class="nav__logo" aria-label="Holistic Psychology — home">
+    <nav class="nav" aria-label="Hlavní navigace">
+      <a href="index.html" class="nav__logo" aria-label="Holistická psychologie — domů">
         <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
       </a>
 
       <ul class="nav__links" id="nav-links" role="list">
         <li class="nav__close-item">
-          <button class="nav__close" aria-label="Close menu">
+          <button class="nav__close" aria-label="Zavřít menu">
             <span></span>
             <span></span>
           </button>
         </li>
-        <li><a href="en.html#about">About me</a></li>
-        <li><a href="en.html#services">Services</a></li>
-        <li><a href="webinars.html">Webinars</a></li>
-        <li><a href="retreats.html">Retreats</a></li>
-        <li><a href="en.html#contact" class="nav__contact-btn">Contact</a></li>
-        <li class="nav__lang"><a href="index.html" hreflang="cs" aria-label="Přepnout do češtiny">CS</a></li>
+        <li><a href="index.html#about">O mně</a></li>
+        <li><a href="index.html#services">Služby</a></li>
+        <li><a href="webinars.html">Webináře</a></li>
+        <li><a href="retreats.html">Retreaty</a></li>
+        <li><a href="index.html#contact" class="nav__contact-btn">Kontakt</a></li>
+        <li class="nav__lang"><a href="retreats-en.html" hreflang="en" aria-label="Switch to English">EN</a></li>
       </ul>
 
       <div class="nav__backdrop" aria-hidden="true"></div>
 
       <button
         class="nav__hamburger"
-        aria-label="Open menu"
+        aria-label="Otevřít menu"
         aria-expanded="false"
         aria-controls="nav-links"
       >
@@ -58,14 +65,241 @@
   </header>
 
   <main id="main">
-    <section style="padding: var(--space-24) var(--space-8); min-height: 60vh; display: flex; align-items: center;">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-6);">How I can help</p>
-        <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; line-height: 1.1; color: var(--color-text); margin-bottom: var(--space-6);">Retreats</h1>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 42ch; line-height: 1.7; margin-bottom: var(--space-10);">Content coming soon.</p>
-        <a href="en.html" class="service-link"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Back to home</a>
+
+    <!-- Hero -->
+    <section style="position: relative; min-height: clamp(480px, 62vh, 760px); background: var(--color-dark-bg); overflow: hidden; display: flex; align-items: flex-end;">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/67e298fe2010ed6ec06a056d/1780915693771-7GX4YF7LGSCWR78RLPNN/unsplash-image-hTrc3aG3OGY.jpg?format=1500w"
+        alt="Klidná přírodní pobřežní krajina"
+        loading="eager"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.52;"
+      />
+      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(19,35,58,0) 20%, rgba(19,35,58,0.92) 100%);"></div>
+      <div class="container" style="position: relative; z-index: 1; width: 100%; padding-bottom: var(--space-16);">
+        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-4);">Jak mohu pomoci</p>
+        <h1 style="font-family: var(--font-display); font-size: clamp(2.5rem, 1rem + 5vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--color-dark-text); margin-bottom: var(--space-5); max-width: 18ch;">Reset Retreat:<br>Návrat k sobě</h1>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: rgba(249,247,244,0.78); line-height: 1.5; margin-bottom: var(--space-8); max-width: 46ch;">Terapeutický retreat pro ženy, které vstupují do nové životní etapy.</p>
+        <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: var(--color-terracotta); border: 1px solid var(--color-terracotta); padding: var(--space-2) var(--space-5); border-radius: 100px;">Říjen 2026 &nbsp;·&nbsp; Španělsko</span>
       </div>
     </section>
+
+    <!-- Pozvání -->
+    <section style="padding: var(--space-16) var(--space-8) var(--space-12);">
+      <div class="container" style="max-width: 760px;">
+        <p class="services__label" style="margin-bottom: var(--space-6);" data-reveal>Pozvání ke zpomalení</p>
+        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); max-width: 65ch; line-height: 1.85; margin-bottom: var(--space-6);" data-reveal data-delay="100">Tento retreat je pozvánkou ke zpomalení. Příležitostí opustit každodenní povinnosti a očekávání. Znovu se napojit na sebe. Strávit čas s ženami, které chápou, že se život mění — a které jsou připraveny vstoupit do tohoto dalšího životního kapitolu s větší lehkostí, sebejistotou a sebeúctou.</p>
+        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 65ch; line-height: 1.85;" data-reveal data-delay="200">Společně prozkoumáme fyzické, emocionální a psychologické změny, které v tomto období života často přicházejí. Prostřednictvím odborného vedení, smysluplných rozhovorů, jemného pohybu, výživné stravy a odpočinku získáte hlubší pochopení toho, co vaše mysl a tělo mohou v tuto chvíli potřebovat. Hormonální změny mohou být náročné — ale nemusíte je zvládat samy.</p>
+      </div>
+    </section>
+
+    <!-- Pro koho je retreat určen -->
+    <section style="padding: var(--space-12) var(--space-8) var(--space-16); background: var(--color-bg-secondary);">
+      <div class="container" style="max-width: 760px;">
+        <p class="services__label" style="margin-bottom: var(--space-8);" data-reveal>Pro koho je tento retreat určen?</p>
+        <ul role="list" style="list-style: none; padding: 0; margin: 0;" data-reveal data-delay="100">
+          <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; display: flex; align-items: baseline; gap: var(--space-5);">
+            <span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>
+            Ženy, které cítí, že od nich život vyžaduje něco jiného
+          </li>
+          <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; display: flex; align-items: baseline; gap: var(--space-5);">
+            <span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>
+            Ženy, které jsou unavené neustálým překonáváním sebe sama
+          </li>
+          <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; display: flex; align-items: baseline; gap: var(--space-5);">
+            <span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>
+            Ženy, které chtějí s větší laskavostí porozumět svému měnícímu se tělu
+          </li>
+          <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; display: flex; align-items: baseline; gap: var(--space-5);">
+            <span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>
+            Ženy, které jsou připraveny přestat dávat samy sebe na poslední místo
+          </li>
+          <li style="padding: var(--space-4) 0; font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; display: flex; align-items: baseline; gap: var(--space-5);">
+            <span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>
+            Ženy, které touží po prostoru, klidu, skutečném spojení a obnově
+          </li>
+        </ul>
+        <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.7; margin-top: var(--space-6); font-style: italic;" data-reveal data-delay="200">Nevyžadujeme žádné předchozí zkušenosti s jógou, retreaty ani osobním rozvojem.</p>
+      </div>
+    </section>
+
+    <!-- Foto pruh -->
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); height: clamp(180px, 28vw, 340px); overflow: hidden;" aria-hidden="true">
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/67e298fe2010ed6ec06a056d/1780918693629-FER8Q9C8KFU1AGZ9KJWY/unsplash-image-M3nIYfwOWMs.jpg?format=750w"
+        alt=""
+        loading="lazy"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/67e298fe2010ed6ec06a056d/c1ce1dd5-46a0-4feb-90e0-9692063fc018/flowers.jpg?format=750w"
+        alt=""
+        loading="lazy"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+      <img
+        src="https://images.squarespace-cdn.com/content/v1/67e298fe2010ed6ec06a056d/1780918927147-5BRLU35XGZB2I77B1NPV/unsplash-image-X-OZDHpjBwk.jpg?format=750w"
+        alt=""
+        loading="lazy"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
+    </div>
+
+    <!-- Co vás čeká -->
+    <section style="padding: var(--space-16) var(--space-8);">
+      <div class="container">
+        <p class="services__label" style="margin-bottom: var(--space-8);" data-reveal>Co vás čeká</p>
+        <ul role="list" style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); max-width: 880px;" data-reveal data-delay="100">
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Obohacující workshopy vedené psycholožkou</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Praktické pochopení hormonálních a emocionálních změn</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Jemná jóga, pohyb, protahování a pilates pro všechny úrovně</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Relaxace, reflexe a sdílení ve skupině pro vnitřní klid</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Krásné prostředí navržené tak, aby vám pomohlo zpomalit</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Výživná jídla připravená s ohledem na wellbeing</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Skutečné propojení se ženami se stejným smýšlením</li>
+          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-terracotta); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.65;">Dostatek času na odpočinek, objevování, smích a péči o sebe</li>
+        </ul>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); max-width: 50ch; line-height: 1.55; margin-top: var(--space-10);" data-reveal data-delay="200">Především zjistíte, že nemusíte nést všechno samy.</p>
+      </div>
+    </section>
+
+    <!-- Zážitek — 4 pilíře -->
+    <section style="padding: var(--space-16) var(--space-8); background: var(--color-bg-secondary);">
+      <div class="container">
+        <p class="services__label" style="margin-bottom: var(--space-8);" data-reveal>Zážitek</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-6); max-width: 880px;" data-reveal data-delay="100">
+
+          <div style="padding: var(--space-8) var(--space-6); border-top: 2px solid var(--color-terracotta); background: var(--color-bg);">
+            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); margin-bottom: var(--space-3); line-height: 1.3;">Záměrná struktura</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Propojujeme jemné cvičení, otevřené prozkoumávání a prostor pro reflexi — aby byl zážitek soustředěný i přirozený. Žádný spěch. Žádný tlak. Žádná očekávání.</p>
+          </div>
+
+          <div style="padding: var(--space-8) var(--space-6); border-top: 2px solid var(--color-terracotta); background: var(--color-bg);">
+            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); margin-bottom: var(--space-3); line-height: 1.3;">Síla společenství</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Propojení je klíčovou součástí procesu. Stejně tolik se naučíte od skupiny jako od samotného obsahu. Odpojte se od každodenního hluku a znovu se napojte na sebe.</p>
+          </div>
+
+          <div style="padding: var(--space-8) var(--space-6); border-top: 2px solid var(--color-terracotta); background: var(--color-bg);">
+            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); margin-bottom: var(--space-3); line-height: 1.3;">Odborné vedení</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Vedeno zkušenou psycholožkou, která umí vytvořit bezpečný prostor, podpořit zapojení a udržet vše v pohybu s účelem a laskavostí.</p>
+          </div>
+
+          <div style="padding: var(--space-8) var(--space-6); border-top: 2px solid var(--color-terracotta); background: var(--color-bg);">
+            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); margin-bottom: var(--space-3); line-height: 1.3;">Podpůrné prostředí</p>
+            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Tento retreat staví na komfortu, bezpečí a respektu — abyste mohly přijít přesně takové, jaké jste, a plně se zapojit do procesu uzdravování a obnovy.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Místo, kde lze volně dýchat — tmavý mezidíl -->
+    <section style="padding: var(--space-20) var(--space-8); background: var(--color-dark-bg);">
+      <div class="container" style="max-width: 680px; text-align: center;" data-reveal>
+        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-8);">Místo, kde lze volně dýchat</p>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.6rem, 1rem + 2.5vw, 3rem); font-weight: 300; color: var(--color-dark-text); line-height: 1.4; margin-bottom: var(--space-10);">„Ne každá žena potřebuje terapii — ale každá žena si zaslouží místo, kde může být sama sebou."</p>
+        <p style="font-family: var(--font-body); font-size: var(--text-base); color: rgba(249,247,244,0.65); line-height: 1.85; max-width: 52ch; margin: 0 auto var(--space-8);">Místo, kde může zpomalit bez výčitek svědomí. Být podporována, aniž by si to musela zasloužit. Být o ni postaráno, aniž by o to musela žádat. A připomenout si, že tato životní kapitola není koncem — může být začátkem něčeho krásného.</p>
+      </div>
+    </section>
+
+    <!-- Časté dotazy -->
+    <section style="padding: var(--space-16) var(--space-8);">
+      <div class="container" style="max-width: 760px;">
+        <p class="services__label" style="margin-bottom: var(--space-8);" data-reveal>Časté dotazy</p>
+
+        <details class="retreat-details" style="border-top: 1px solid var(--color-border); padding: var(--space-6) 0;" data-reveal>
+          <summary style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); display: flex; justify-content: space-between; align-items: center; gap: var(--space-6);">
+            Mohu přijet sama?
+          </summary>
+          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-top: var(--space-5); max-width: 60ch;">Samozřejmě. Mnoho žen přijíždí samo a právě ony odcházejí s nejsilnějšími vazbami. Tento retreat je navržen tak, aby vytvořil skutečné společenství. Budete se od první chvíle cítit vítány, začleněny a jemně podporovány.</p>
+        </details>
+
+        <details class="retreat-details" style="border-top: 1px solid var(--color-border); padding: var(--space-6) 0;" data-reveal data-delay="100">
+          <summary style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); display: flex; justify-content: space-between; align-items: center; gap: var(--space-6);">
+            Co když nejsem ohebná nebo nemám zkušenosti s jógou?
+          </summary>
+          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-top: var(--space-5); max-width: 60ch;">Vůbec to nevadí. Veškeré pohybové aktivity jsou jemné, přístupné a přizpůsobené všem úrovním — včetně naprostých začátečnic. Nejde o výkon, ale o propojení se sebou samou. A trochu zábavy!</p>
+        </details>
+
+        <details class="retreat-details" style="border-top: 1px solid var(--color-border); padding: var(--space-6) 0;" data-reveal data-delay="200">
+          <summary style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); display: flex; justify-content: space-between; align-items: center; gap: var(--space-6);">
+            S kým budu sdílet pokoj?
+          </summary>
+          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-top: var(--space-5); max-width: 60ch;">Budete spárována s někým laskavým, otevřeným a pravděpodobně na podobné životní cestě. Většina účastnic přijíždí sama — a mnohé odjíždějí s novou celoživotní přítelkyní. Pokud máte jakékoli obavy, stačí se ozvat a vše společně prodiskutujeme.</p>
+        </details>
+
+        <details class="retreat-details" style="border-top: 1px solid var(--color-border); padding: var(--space-6) 0;" data-reveal data-delay="300">
+          <summary style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); display: flex; justify-content: space-between; align-items: center; gap: var(--space-6);">
+            Bude i volný čas na prozkoumávání nebo odpočinek?
+          </summary>
+          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-top: var(--space-5); max-width: 60ch;">Ano — rozhodně. I když je program bohatý a krásný, vše je dobrovolné. Kdykoliv budete potřebovat, máte volnost odpočívat, procházet se, psát si deník nebo prostě jen dýchat. Toto je váš čas.</p>
+        </details>
+
+        <details class="retreat-details" style="border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: var(--space-6) 0;" data-reveal data-delay="400">
+          <summary style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); display: flex; justify-content: space-between; align-items: center; gap: var(--space-6);">
+            Co se stane po skončení retreatu?
+          </summary>
+          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.85; margin-top: var(--space-5); max-width: 60ch;">Jasnost, propojení a poznání, které si odnesete, mají tendenci pronikat do vašeho každodenního života ještě dlouho po návratu domů. Stanete se součástí soukromé skupiny, kde zůstanete v kontaktu s ostatními účastnicemi, a k dispozici bude i volitelná následná podpora.</p>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- Jak to funguje -->
+    <section style="padding: var(--space-16) var(--space-8); background: var(--color-bg-secondary);">
+      <div class="container" style="max-width: 760px;">
+        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>Jak to funguje</p>
+
+        <ol role="list" style="list-style: none; padding: 0; margin: 0;" data-reveal data-delay="100">
+          <li style="padding: var(--space-6) 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-6); align-items: start;">
+            <span style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-terracotta); line-height: 1.1;">1</span>
+            <div>
+              <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-2);">Vyberte retreat</p>
+              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Prohlédněte si nadcházející akce a najděte tu, která vám přijde ta pravá.</p>
+            </div>
+          </li>
+          <li style="padding: var(--space-6) 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-6); align-items: start;">
+            <span style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-terracotta); line-height: 1.1;">2</span>
+            <div>
+              <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-2);">Rezervujte si místo</p>
+              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Rezervujte si místo a uhraďte poplatek. Pokud se plány změní, při zrušení alespoň 14 dní před začátkem dostanete zpět 50 % ceny.</p>
+            </div>
+          </li>
+          <li style="padding: var(--space-6) 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-6); align-items: start;">
+            <span style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-terracotta); line-height: 1.1;">3</span>
+            <div>
+              <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-2);">Prostudujte uvítací materiály</p>
+              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Po rezervaci obdržíte uvítací balíček se vším potřebným — podrobný program, tipy na balení a možné doplňkové služby.</p>
+            </div>
+          </li>
+          <li style="padding: var(--space-6) 0; border-top: 1px solid var(--color-border); display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-6); align-items: start;">
+            <span style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-terracotta); line-height: 1.1;">4</span>
+            <div>
+              <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-2);">Zarezervujte si dopravu</p>
+              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Doporučujeme zařídit dopravu tam i zpět co nejdříve, aby byl váš příjezd bez komplikací.</p>
+            </div>
+          </li>
+          <li style="padding: var(--space-6) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); display: grid; grid-template-columns: 2.5rem 1fr; gap: var(--space-6); align-items: start;">
+            <span style="font-family: var(--font-display); font-size: var(--text-xl); font-weight: 300; color: var(--color-terracotta); line-height: 1.1;">5</span>
+            <div>
+              <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-2);">Sbalte se a přijeďte</p>
+              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Teď už jen sbalit kufry a těšit se na nové dobrodružství.</p>
+            </div>
+          </li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding: var(--space-20) var(--space-8) var(--space-24);">
+      <div class="container" style="max-width: 640px;" data-reveal>
+        <p class="services__label" style="margin-bottom: var(--space-6);">Máte zájem?</p>
+        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem); font-weight: 300; color: var(--color-accent); line-height: 1.35; margin-bottom: var(--space-6);">Retreat se koná na úchvatném místě u moře v Evropě — podzim 2026.</p>
+        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 52ch; line-height: 1.85; margin-bottom: var(--space-10);">Podrobnosti budou brzy oznámeny. Pokud vás to oslovilo, dejte nám vědět a budete mezi prvními, kdo se dozví o otevření registrací.</p>
+        <a href="index.html#contact" class="service-link" style="font-size: var(--text-base);">Projevte zájem →</a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" id="contact">
@@ -73,24 +307,24 @@
       <div class="footer__inner">
 
         <div class="footer__brand">
-          <p class="footer__brand-name">Marcela Crhonkova, MSc.</p>
+          <p class="footer__brand-name">Marcela Crhonková, MSc.</p>
           <p class="footer__brand-tagline">
-            Holistic Psychology — care for mind, body, and soul.
+            Holistická psychologie — péče pro mysl, tělo a duši.
           </p>
         </div>
 
         <div>
-          <p class="footer__col-label">Navigation</p>
+          <p class="footer__col-label">Navigace</p>
           <ul class="footer__links" role="list">
-            <li><a href="en.html#about">About me</a></li>
-            <li><a href="individual-sessions.html">Individual Sessions</a></li>
-            <li><a href="webinars.html">Webinars</a></li>
-            <li><a href="retreats.html">Retreats</a></li>
+            <li><a href="index.html#about">O mně</a></li>
+            <li><a href="individual-sessions.html">Individuální sezení</a></li>
+            <li><a href="webinars.html">Webináře</a></li>
+            <li><a href="retreats.html">Retreaty</a></li>
           </ul>
         </div>
 
         <div>
-          <p class="footer__col-label">Contact</p>
+          <p class="footer__col-label">Kontakt</p>
           <address style="font-style: normal;">
             <div class="footer__contact-item">
               <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -108,7 +342,7 @@
               <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
               </svg>
-              <span>Prague, Czech Republic</span>
+              <span>Praha, Česká republika</span>
             </div>
           </address>
         </div>
@@ -117,9 +351,9 @@
 
       <div class="footer__bottom">
         <p class="footer__copyright">
-          &copy; 2026 Marcela Crhonkova, MSc. All rights reserved.
+          &copy; 2026 Marcela Crhonková, MSc. Všechna práva vyhrazena.
         </p>
-        <a href="index.html" class="footer__lang-switch" hreflang="cs">Česká verze →</a>
+        <a href="retreats-en.html" class="footer__lang-switch" hreflang="en">English version →</a>
       </div>
 
     </div>

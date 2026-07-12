@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="cs" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Holistic Approach — Holistic Psychology by Marcela Crhonkova, MSc." />
-  <title>Holistic Approach — Marcela Crhonkova, MSc.</title>
+  <meta name="description" content="Můj přístup — vědecky podložená psychologie, neurověda a emocionální uvědomění. Marcela Crhonková, MSc." />
+  <title>Můj přístup — Marcela Crhonková, MSc.</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,34 +19,34 @@
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">Přejít na obsah</a>
 
   <header>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="en.html" class="nav__logo" aria-label="Holistic Psychology — home">
+    <nav class="nav" aria-label="Hlavní navigace">
+      <a href="index.html" class="nav__logo" aria-label="Holistická psychologie — domů">
         <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
       </a>
 
       <ul class="nav__links" id="nav-links" role="list">
         <li class="nav__close-item">
-          <button class="nav__close" aria-label="Close menu">
+          <button class="nav__close" aria-label="Zavřít menu">
             <span></span>
             <span></span>
           </button>
         </li>
-        <li><a href="en.html#about">About me</a></li>
-        <li><a href="en.html#services">Services</a></li>
-        <li><a href="webinars.html">Webinars</a></li>
-        <li><a href="retreats.html">Retreats</a></li>
-        <li><a href="en.html#contact" class="nav__contact-btn">Contact</a></li>
-        <li class="nav__lang"><a href="index.html" hreflang="cs" aria-label="Přepnout do češtiny">CS</a></li>
+        <li><a href="about.html">O mně</a></li>
+        <li><a href="index.html#services">Služby</a></li>
+        <li><a href="index.html#webinars">Webináře</a></li>
+        <li><a href="index.html#retreats">Retreaty</a></li>
+        <li><a href="index.html#contact" class="nav__contact-btn">Kontakt</a></li>
+        <li class="nav__lang"><a href="holistic-approach-en.html" hreflang="en" aria-label="Switch to English">EN</a></li>
       </ul>
 
       <div class="nav__backdrop" aria-hidden="true"></div>
 
       <button
         class="nav__hamburger"
-        aria-label="Open menu"
+        aria-label="Otevřít menu"
         aria-expanded="false"
         aria-controls="nav-links"
       >
@@ -58,14 +58,56 @@
   </header>
 
   <main id="main">
-    <section style="padding: var(--space-24) var(--space-8); min-height: 60vh; display: flex; align-items: center;">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-6);">How I can help</p>
-        <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; line-height: 1.1; color: var(--color-text); margin-bottom: var(--space-6);">Holistic Approach</h1>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 42ch; line-height: 1.7; margin-bottom: var(--space-10);">Content coming soon.</p>
-        <a href="en.html" class="service-link"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Back to home</a>
+
+    <!-- Page hero -->
+    <section class="page-hero" aria-labelledby="approach-title">
+      <div class="page-hero__inner">
+        <p class="page-hero__label" data-reveal>Jak pracuji</p>
+        <h1 class="page-hero__title" id="approach-title" data-reveal data-delay="100">
+          Můj přístup
+        </h1>
+        <hr class="rule" data-reveal data-delay="200" />
       </div>
     </section>
+
+    <!-- Content -->
+    <section class="bio" aria-label="Můj přístup k terapii">
+      <div class="bio__grid">
+        <div class="prose" data-reveal>
+          <p class="lead">
+            Pracuji s lidmi, kteří chtějí hlouběji porozumět sami sobě a dosáhnout trvalé
+            psychologické změny — ne jen dočasného zvládání příznaků.
+          </p>
+          <p>
+            Můj přístup kombinuje psychologii postavenou na vědeckých poznatcích, neurovědní
+            porozumění nervovému systému, emocionální uvědomění a praktickou terapeutickou
+            práci, kterou lze integrovat do každodenního života.
+          </p>
+          <p>
+            Pokud chcete porozumět vzorcům, které vám již neslouží, vybudovat bezpečnější
+            a stabilnější vztah se sebou samým a vytvořit prostor pro život, který je více
+            v souladu, klidnější a autentičtější — pak jste na správném místě.
+          </p>
+          <p>
+            Změna se odehrává ve společném procesu, ukotvená ve vědě i v lidské zkušenosti.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="about-cta" aria-labelledby="cta-title">
+      <div class="about-cta__inner">
+        <p class="about-cta__label" data-reveal>Začněme společně</p>
+        <p class="about-cta__body" data-reveal data-delay="200">
+          Ne každý potřebuje terapii, ale každý si zaslouží prostor, kde může být sám sebou.
+        </p>
+        <a href="index.html#contact" class="btn btn--light" data-reveal data-delay="300">
+          Rezervovat konzultaci
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer" id="contact">
@@ -73,42 +115,42 @@
       <div class="footer__inner">
 
         <div class="footer__brand">
-          <p class="footer__brand-name">Marcela Crhonkova, MSc.</p>
+          <p class="footer__brand-name">Marcela Crhonková, MSc.</p>
           <p class="footer__brand-tagline">
-            Holistic Psychology — care for mind, body, and soul.
+            Holistická psychologie — péče pro mysl, tělo a duši.
           </p>
         </div>
 
         <div>
-          <p class="footer__col-label">Navigation</p>
+          <p class="footer__col-label">Navigace</p>
           <ul class="footer__links" role="list">
-            <li><a href="en.html#about">About me</a></li>
-            <li><a href="individual-sessions.html">Individual Sessions</a></li>
-            <li><a href="webinars.html">Webinars</a></li>
-            <li><a href="retreats.html">Retreats</a></li>
+            <li><a href="about.html">O mně</a></li>
+            <li><a href="individual-sessions.html">Individuální sezení</a></li>
+            <li><a href="index.html#webinars">Webináře</a></li>
+            <li><a href="index.html#retreats">Retreaty</a></li>
           </ul>
         </div>
 
         <div>
-          <p class="footer__col-label">Contact</p>
+          <p class="footer__col-label">Kontakt</p>
           <address style="font-style: normal;">
             <div class="footer__contact-item">
               <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
               </svg>
-              <a href="mailto:info@marcelacrhonkova.cz">info@marcelacrhonkova.cz</a>
+              <a href="mailto:office@marcelacrhonkova.com">office@marcelacrhonkova.com</a>
             </div>
             <div class="footer__contact-item">
               <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 5.35 5.35l1.62-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 14l.19 2.92z"/>
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
               </svg>
-              <a href="tel:+420777000000">+420 777 000 000</a>
+              <a href="https://www.linkedin.com/in/marcela-crhonkova-65221653" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer__contact-item">
               <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
               </svg>
-              <span>Prague, Czech Republic</span>
+              <a href="https://www.instagram.com/marcela_holisticpsychology/" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </address>
         </div>
@@ -117,9 +159,9 @@
 
       <div class="footer__bottom">
         <p class="footer__copyright">
-          &copy; 2026 Marcela Crhonkova, MSc. All rights reserved.
+          &copy; 2026 Marcela Crhonková, MSc. Všechna práva vyhrazena.
         </p>
-        <a href="index.html" class="footer__lang-switch" hreflang="cs">Česká verze →</a>
+        <a href="holistic-approach-en.html" class="footer__lang-switch" hreflang="en">English version →</a>
       </div>
 
     </div>

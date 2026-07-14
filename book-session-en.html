@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a Discovery Session with Marcela Crhonkova, MSc. — a 90-minute online consultation to explore your inner self and begin your journey." />
+  <title>Book a Discovery Session — Marcela Crhonkova, MSc.</title>
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ── Navigation ───────────────────────────────────────── -->
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="en.html" class="nav__logo" aria-label="Holistic Psychology — home">
+        <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
+      </a>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li class="nav__close-item">
+          <button class="nav__close" aria-label="Close menu">
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+        <li><a href="about-en.html">About me</a></li>
+        <li><a href="en.html#services">Services</a></li>
+        <li><a href="en.html#webinars">Webinars</a></li>
+        <li><a href="en.html#retreats">Retreats</a></li>
+        <li><a href="book-session-en.html" class="nav__contact-btn" aria-current="page">Book a session</a></li>
+        <li class="nav__lang"><a href="about.html" hreflang="cs" aria-label="Přepnout do češtiny">CS</a></li>
+      </ul>
+
+      <div class="nav__backdrop" aria-hidden="true"></div>
+
+      <button
+        class="nav__hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ── Main content ─────────────────────────────────────── -->
+  <main id="main">
+
+    <!-- Page hero -->
+    <section class="page-hero" aria-labelledby="booking-title">
+      <div class="page-hero__inner">
+        <p class="page-hero__label" data-reveal>Discovery Session</p>
+        <h1 class="page-hero__title" id="booking-title" data-reveal data-delay="100">
+          Your journey<br>begins here
+        </h1>
+        <hr class="rule" data-reveal data-delay="200" />
+      </div>
+    </section>
+
+    <!-- Session intro & details -->
+    <section class="booking-intro" aria-label="About the Discovery Session">
+      <div class="booking-intro__inner">
+
+        <div class="prose" data-reveal>
+          <p class="lead">
+            In this 90-minute online consultation, we will explore your inner self in a meaningful
+            way. Together, we will look at your current life situation and the different layers of
+            your mind, helping you discover the key elements that make up your unique story.
+          </p>
+          <p>
+            This session is meant to be an in-depth journey, where we dig beneath the surface to
+            find important parts of your personality — your strengths, insights, and the answers
+            you need.
+          </p>
+          <p>
+            As we go through this process, you'll gain new perspectives that may reveal fresh
+            opportunities. You will also have the chance to identify and tackle any hurdles or old
+            habits that might be holding you back from embracing your true self, practising
+            self-love, and leading a fulfilling life.
+          </p>
+          <p>
+            By the end of our session, you will receive practical recommendations to help you take
+            concrete steps as you start this new chapter. We will also discuss whether further
+            collaboration would benefit you in achieving your goals.
+          </p>
+          <p>
+            This session is a chance for you to reconnect with your true self and confidently step
+            into a life that aligns with your deepest values and dreams.
+          </p>
+        </div>
+
+        <!-- Session details callout -->
+        <div class="booking-details" data-reveal data-delay="100">
+          <div class="booking-detail-item">
+            <span class="booking-detail-label">Duration</span>
+            <span class="booking-detail-value">Up to 90 minutes</span>
+          </div>
+          <div class="booking-detail-item">
+            <span class="booking-detail-label">Format</span>
+            <span class="booking-detail-value">Online — Zoom or similar</span>
+          </div>
+        </div>
+
+        <p class="booking-note" data-reveal data-delay="200">
+          The Discovery Session is designed as the best starting point. Other services are also
+          available with personalised pricing — please feel free to contact me directly via email
+          to discuss hourly rates or tailored packages that best suit your needs.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Contact form -->
+    <section class="booking-form-section" aria-labelledby="form-title">
+      <div class="booking-form-section__inner">
+
+        <p class="booking-form-section__label" data-reveal>Get in touch</p>
+        <h2 class="booking-form-section__title" id="form-title" data-reveal data-delay="100">
+          Contact me
+        </h2>
+        <p class="booking-form-section__sub" data-reveal data-delay="200">
+          Interested in exploring together? Fill out some info and I will be in touch shortly.
+          I can't wait to hear from you!
+        </p>
+
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xzdnbnyq"
+          method="POST"
+          data-reveal
+          data-delay="300"
+        >
+          <div class="form-row">
+            <div class="form-field">
+              <label for="first-name">First Name</label>
+              <input
+                type="text"
+                id="first-name"
+                name="first_name"
+                required
+                autocomplete="given-name"
+                placeholder="Your first name"
+              />
+            </div>
+            <div class="form-field">
+              <label for="last-name">Last Name</label>
+              <input
+                type="text"
+                id="last-name"
+                name="last_name"
+                required
+                autocomplete="family-name"
+                placeholder="Your last name"
+              />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows="6"
+              placeholder="Tell me a little about what brings you here…"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary">Send</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ────────────────────────────────────────────── -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <p class="footer__brand-name">Marcela Crhonkova, MSc.</p>
+          <p class="footer__brand-tagline">
+            Holistic Psychology — care for mind, body, and soul.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-label">Navigation</p>
+          <ul class="footer__links" role="list">
+            <li><a href="about-en.html">About me</a></li>
+            <li><a href="en.html#services">Individual Sessions</a></li>
+            <li><a href="en.html#webinars">Webinars</a></li>
+            <li><a href="en.html#retreats">Retreats</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-label">Contact</p>
+          <address style="font-style: normal;">
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <a href="mailto:info@marcelacrhonkova.cz">info@marcelacrhonkova.cz</a>
+            </div>
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.64 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.74a16 16 0 0 0 5.35 5.35l1.62-1.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 14l.19 2.92z"/>
+              </svg>
+              <a href="tel:+420777000000">+420 777 000 000</a>
+            </div>
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Prague, Czech Republic</span>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Marcela Crhonkova, MSc. All rights reserved.
+        </p>
+        <a href="about.html" class="footer__lang-switch" hreflang="cs">Česká verze →</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="form-toast" role="status" aria-live="polite">
+    <svg class="toast__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="20 6 9 17 4 12"/>
+    </svg>
+    <span id="form-toast-msg"></span>
+  </div>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    (function () {
+      const form = document.querySelector('.contact-form');
+      const toast = document.getElementById('form-toast');
+      const toastMsg = document.getElementById('form-toast-msg');
+      let hideTimer = null;
+
+      function showToast(message) {
+        clearTimeout(hideTimer);
+        toastMsg.textContent = message;
+        toast.classList.add('toast--visible');
+        hideTimer = setTimeout(function () {
+          toast.classList.remove('toast--visible');
+        }, 5000);
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const btn = form.querySelector('[type="submit"]');
+        btn.disabled = true;
+
+        try {
+          const response = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+
+          if (response.ok) {
+            form.reset();
+            showToast('Your message has been sent — I\'ll be in touch soon!');
+          } else {
+            showToast('Something went wrong. Please try again.');
+          }
+        } catch (_) {
+          showToast('Something went wrong. Please try again.');
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

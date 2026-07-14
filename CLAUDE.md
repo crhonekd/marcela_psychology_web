@@ -10,20 +10,34 @@ Bilingual (Czech/English) static website for a premium psychology practice.
 ## File Structure
 ```
 /
-├── index.html          ← Czech homepage
-├── en.html             ← English homepage
+├── index.html                  ← Czech homepage
+├── en.html                     ← English homepage
+├── about.html                  ← Czech about page
+├── about-en.html               ← English about page
+├── book-session.html           ← Czech booking/contact page (Formspree form)
+├── book-session-en.html        ← English booking/contact page (Formspree form)
+├── holistic-approach.html      ← Czech holistic approach page
+├── holistic-approach-en.html   ← English holistic approach page
+├── retreats.html               ← Czech retreats page
+├── retreats-en.html            ← English retreats page
+├── webinars.html               ← Czech webinars page
+├── webinars-en.html            ← English webinars page
 ├── css/
 │   ├── tokens.css      ← All CSS custom properties (design tokens)
 │   ├── base.css        ← Reset + base styles
 │   └── style.css       ← Components and layout
 ├── js/
-│   └── main.js         ← Nav scroll, mobile menu, scroll reveal
+│   └── main.js         ← Nav scroll, mobile menu, scroll reveal (shared, all pages)
 ├── assets/
 │   └── images/         ← Site photography
 └── docs/
     └── superpowers/
         └── plans/      ← Implementation plans
 ```
+
+### Bilingual naming convention
+Every sub-page follows: `<name>.html` (Czech) paired with `<name>-en.html` (English).
+Language switchers in nav and footer cross-link the pair.
 
 ## Tech Stack
 - **HTML5** — semantic, accessible markup
@@ -119,6 +133,25 @@ google-chrome --headless --disable-gpu --no-sandbox \
   http://localhost:8765/index.html
 pdftoppm -r 65 -png /tmp/full.pdf /tmp/page
 ```
+
+## Sub-page conventions
+
+- Sub-pages use `.page-hero` (not `.hero`) for the top section — it includes
+  `padding-top: calc(var(--space-24) + 56px)` to clear the fixed nav. Never
+  use `.hero` on a sub-page or the heading will hide behind the nav bar.
+- Page-specific JS goes **inline** at the bottom of that page's `<body>`, not
+  in `main.js`. `main.js` is shared across all pages and should only contain
+  nav scroll, mobile menu, and scroll-reveal logic.
+
+## Contact / Booking form
+
+- Formspree endpoint: `https://formspree.io/f/xzdnbnyq` (used on both
+  `book-session.html` and `book-session-en.html`)
+- Forms submit via `fetch` with `Accept: application/json` — no page redirect.
+  On success the form resets and a `.toast` notification appears for 5 s.
+- The `.toast` / `.toast--visible` component is defined in `css/style.css`.
+- The "Book a session" / "Rezervovat konzultaci" CTA buttons on `en.html` and
+  `index.html` link to the booking pages — do not revert them to `#contact`.
 
 ## Known Pitfalls
 

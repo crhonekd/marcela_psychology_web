@@ -22,6 +22,14 @@
     .retreat-details summary::-webkit-details-marker { display: none; }
     .retreat-details summary::after { content: '+'; font-family: var(--font-body); font-style: normal; font-size: 1.25rem; color: var(--color-text-muted); transition: transform var(--transition); line-height: 1; }
     .retreat-details[open] summary::after { content: '−'; }
+
+    .retreat-split { display: grid; grid-template-columns: 1fr 1fr; min-height: clamp(280px, 38vw, 500px); }
+    .retreat-split__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .retreat-split__text { display: flex; align-items: center; justify-content: center; padding: var(--space-12) var(--space-10); background: var(--color-bg-secondary); }
+    @media (max-width: 640px) {
+      .retreat-split { grid-template-columns: 1fr; }
+      .retreat-split__text { min-height: 180px; padding: var(--space-10) var(--space-8); }
+    }
   </style>
 </head>
 <body>
@@ -122,25 +130,13 @@
       </div>
     </section>
 
-    <!-- Photo strip -->
-    <div style="display: grid; grid-template-columns: repeat(3, 1fr); height: clamp(180px, 28vw, 340px); overflow: hidden;" aria-hidden="true">
+    <!-- Image break 1 — full-bleed cinematic -->
+    <div aria-hidden="true" style="height: clamp(260px, 42vw, 520px); overflow: hidden;">
       <img
         src="assets/images/retreat-photo-1.jpg"
         alt=""
         loading="lazy"
-        style="width: 100%; height: 100%; object-fit: cover;"
-      />
-      <img
-        src="assets/images/retreat-flowers.jpg"
-        alt=""
-        loading="lazy"
-        style="width: 100%; height: 100%; object-fit: cover;"
-      />
-      <img
-        src="assets/images/retreat-photo-2.jpg"
-        alt=""
-        loading="lazy"
-        style="width: 100%; height: 100%; object-fit: cover;"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: center 35%;"
       />
     </div>
 
@@ -192,6 +188,19 @@
       </div>
     </section>
 
+    <!-- Image break 2 — split: flowers + pull-quote -->
+    <div class="retreat-split" aria-hidden="true">
+      <img
+        src="assets/images/retreat-flowers.jpg"
+        alt=""
+        loading="lazy"
+        class="retreat-split__img"
+      />
+      <div class="retreat-split__text">
+        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.25rem, 0.8rem + 1.8vw, 2.1rem); font-weight: 300; color: var(--color-accent); line-height: 1.55; text-align: center; max-width: 22ch;">You don't have to carry everything alone.</p>
+      </div>
+    </div>
+
     <!-- A place to breathe — dark interlude -->
     <section style="padding: var(--space-20) var(--space-8); background: var(--color-dark-bg);">
       <div class="container" style="max-width: 680px; text-align: center;" data-reveal>
@@ -200,6 +209,16 @@
         <p style="font-family: var(--font-body); font-size: var(--text-base); color: rgba(249,247,244,0.65); line-height: 1.85; max-width: 52ch; margin: 0 auto var(--space-8);">A place where she can slow down without guilt. Be supported without having to earn it. Be cared for without having to ask. And remember that this chapter of life is not an ending — it may be the beginning of something beautiful.</p>
       </div>
     </section>
+
+    <!-- Image break 3 — shorter full-bleed, transitions back to light -->
+    <div aria-hidden="true" style="height: clamp(200px, 30vw, 380px); overflow: hidden;">
+      <img
+        src="assets/images/retreat-photo-2.jpg"
+        alt=""
+        loading="lazy"
+        style="width: 100%; height: 100%; object-fit: cover; object-position: center 50%;"
+      />
+    </div>
 
     <!-- FAQ -->
     <section style="padding: var(--space-16) var(--space-8);">

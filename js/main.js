@@ -95,3 +95,21 @@ if (sections.length && navItems.length) {
 
   sections.forEach(s => sectionObserver.observe(s));
 }
+
+/* ── Cookie consent banner ───────────────────────────────── */
+
+const cookieBanner    = document.getElementById('cookieBanner');
+const cookieAcceptAll = document.getElementById('cookieAcceptAll');
+const cookieNecessary = document.getElementById('cookieNecessary');
+
+if (cookieBanner && !localStorage.getItem('cookie-consent')) {
+  setTimeout(() => cookieBanner.classList.add('cookie-banner--visible'), 800);
+}
+
+function dismissCookieBanner(choice) {
+  localStorage.setItem('cookie-consent', choice);
+  if (cookieBanner) cookieBanner.classList.remove('cookie-banner--visible');
+}
+
+if (cookieAcceptAll) cookieAcceptAll.addEventListener('click', () => dismissCookieBanner('all'));
+if (cookieNecessary) cookieNecessary.addEventListener('click', () => dismissCookieBanner('necessary'));

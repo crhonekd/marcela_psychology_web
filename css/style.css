@@ -599,6 +599,22 @@
   transform: translateX(4px);
 }
 
+/* "Back to home" nav link — always its own line, with clear space above it */
+.service-link--back {
+  display: flex;
+  width: fit-content;
+  margin-top: var(--space-8);
+}
+
+/* On dark sections (e.g. .about-cta) the default navy accent color blends
+   into the background — swap to the light text color for visibility */
+.about-cta .service-link {
+  color: var(--color-dark-text);
+}
+.about-cta .service-link:focus-visible {
+  outline-color: var(--color-dark-text);
+}
+
 /* ── About Preview ───────────────────────────────────────── */
 
 .about {

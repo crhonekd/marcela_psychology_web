@@ -1084,6 +1084,13 @@
   margin-inline: auto;
 }
 .journey__prose p { color: var(--color-text); }
+.journey__prose h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+}
 
 /* ── Closing CTA (navy band) ─────────────────────────────── */
 

@@ -59,13 +59,25 @@
   </header>
 
   <main id="main">
-    <section style="padding: var(--space-24) var(--space-8) var(--space-16);">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-6);">Jak mohu pomoci</p>
-        <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; line-height: 1.1; color: var(--color-text); margin-bottom: var(--space-6);">Workshopy &amp; webináře pro organizace</h1>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-text-muted); max-width: 58ch; line-height: 1.6; margin-bottom: var(--space-10);">Podpora lidí, týmů a lídrů při zvládání lidské stránky moderní práce.</p>
 
-        <figure style="margin: 0 0 var(--space-10); line-height: 0; overflow: hidden; border-radius: 4px;">
+    <!-- Záhlaví stránky -->
+    <section class="page-hero" aria-labelledby="webinars-title">
+      <div class="page-hero__inner">
+        <p class="page-hero__label" data-reveal>Jak mohu pomoci</p>
+        <h1 class="page-hero__title" id="webinars-title" style="max-width: 100%;" data-reveal data-delay="100">
+          Workshopy &amp; webináře<br>pro organizace
+        </h1>
+        <hr class="rule" data-reveal data-delay="200" />
+      </div>
+    </section>
+
+    <!-- Obsah -->
+    <section class="svc-content" aria-label="Přehled workshopů a webinářů">
+      <div class="svc-content__inner">
+
+        <p class="svc-italic-lead" data-reveal>Podpora lidí, týmů a lídrů při zvládání lidské stránky moderní práce.</p>
+
+        <figure style="margin: 0 0 var(--space-10); line-height: 0; overflow: hidden; border-radius: 4px;" data-reveal data-delay="100">
           <img
             src="assets/images/Greek modern.png"
             alt="Řecká moderna — antická moudrost setkává se s psychologií moderního pracoviště"
@@ -76,74 +88,81 @@
           />
         </figure>
 
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); max-width: 64ch; line-height: 1.8; margin-bottom: var(--space-6);">Dnešní pracoviště jsou formována neustálými změnami, rostoucí složitostí a stále vyššími nároky na výkon. Zároveň si organizace stále více uvědomují, že udržitelný úspěch nezávisí pouze na strategii a odbornosti, ale také na psychologickém zdraví, zdravých vztazích, efektivní komunikaci a odolném vedení.</p>
-
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 64ch; line-height: 1.8; margin-bottom: var(--space-6);">Vycházím ze svého vzdělání v oblasti psychologie, koučinku a rozsáhlých zkušeností z mezinárodního a korporátního prostředí. Navrhuji a vedu poutavé workshopy a webináře, které kombinují psychologické poznatky s praktickou relevancí.</p>
-
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 64ch; line-height: 1.8; margin-bottom: var(--space-6);">Sezení jsou přizpůsobena specifickým potřebám každé organizace a lze je realizovat online, osobně nebo jako součást rozsáhlejších programů zaměřených na leadership, wellbeing nebo rozvoj.</p>
-
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 64ch; line-height: 1.8; margin-bottom: var(--space-12);">Můj přístup je důkazně podložený, interaktivní a zakotvený ve skutečných pracovních výzvách. Namísto obecných rad se zaměřuji na to, aby účastníci lépe porozuměli sami sobě, ostatním i psychologickým dynamikám, které ovlivňují výkon, spolupráci a wellbeing.</p>
+        <div class="prose" data-reveal data-delay="100">
+          <p>Dnešní pracoviště jsou formována neustálými změnami, rostoucí složitostí a stále vyššími nároky na výkon. Zároveň si organizace stále více uvědomují, že udržitelný úspěch nezávisí pouze na strategii a odbornosti, ale také na psychologickém zdraví, zdravých vztazích, efektivní komunikaci a odolném vedení.</p>
+          <p>Vycházím ze svého vzdělání v oblasti psychologie, koučinku a rozsáhlých zkušeností z mezinárodního a korporátního prostředí. Navrhuji a vedu poutavé workshopy a webináře, které kombinují psychologické poznatky s praktickou relevancí.</p>
+          <p>Sezení jsou přizpůsobena specifickým potřebám každé organizace a lze je realizovat online, osobně nebo jako součást rozsáhlejších programů zaměřených na leadership, wellbeing nebo rozvoj.</p>
+          <p>Můj přístup je důkazně podložený, interaktivní a zakotvený ve skutečných pracovních výzvách. Namísto obecných rad se zaměřuji na to, aby účastníci lépe porozuměli sami sobě, ostatním i psychologickým dynamikám, které ovlivňují výkon, spolupráci a wellbeing.</p>
+        </div>
 
         <!-- Formáty -->
-        <p class="services__label" style="margin-bottom: var(--space-6);">Formáty</p>
-        <ul role="list" style="list-style: none; padding: 0; margin: 0 0 var(--space-6) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); max-width: 760px;">
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Online webináře</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Prezenční workshopy</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Rozvojová sezení pro lídry</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Týmové vzdělávací akce</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Konferenční prezentace a přednášky</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Individuálně sestavené wellbeing programy</li>
+        <p class="services__label" style="margin-top: var(--space-12); margin-bottom: var(--space-6);" data-reveal>Formáty</p>
+        <ul class="feature-cards" style="max-width: 760px;" data-reveal data-delay="100">
+          <li>Online webináře</li>
+          <li>Prezenční workshopy</li>
+          <li>Rozvojová sezení pro lídry</li>
+          <li>Týmové vzdělávací akce</li>
+          <li>Konferenční prezentace a přednášky</li>
+          <li>Individuálně sestavené wellbeing programy</li>
         </ul>
-        <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); max-width: 60ch; line-height: 1.7; margin-bottom: var(--space-16);">Sezení lze realizovat jako samostatné akce nebo jako součást širší strategie vzdělávání a rozvoje.</p>
+        <div class="prose" data-reveal data-delay="200">
+          <p>Sezení lze realizovat jako samostatné akce nebo jako součást širší strategie vzdělávání a rozvoje.</p>
+        </div>
 
         <!-- Oblíbená témata -->
-        <p class="services__label" style="margin-bottom: var(--space-8);">Oblíbená témata</p>
-        <div style="max-width: 720px; margin-bottom: var(--space-16);">
+        <p class="services__label" style="margin-top: var(--space-16); margin-bottom: var(--space-8);" data-reveal>Oblíbená témata</p>
+        <div class="topic-list" data-reveal data-delay="100">
 
-          <div style="padding: var(--space-8) 0; border-top: 1px solid var(--color-border);">
-            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-4);">Stejná kancelář, jiné světy: Jak přeměnit generační rozdíly v týmovou sílu</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-3);">Ve čtyřech generacích pracujících bok po boku přicházejí různá očekávání, komunikační styly, hodnoty a zkušenosti. Toto sezení zkoumá, jak mohou lídři a týmy překonat stereotypy a přeměnit generační rozdíly v silnější spolupráci, důvěru a výkon.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Účastníci získají praktické poznatky o komunikačních preferencích, pracovních očekáváních, zpětné vazbě a faktorech ovlivňujících angažovanost napříč generacemi.</p>
+          <div class="topic-list__item">
+            <p class="topic-list__title">Stejná kancelář, jiné světy: Jak přeměnit generační rozdíly v týmovou sílu</p>
+            <p class="topic-list__desc">Ve čtyřech generacích pracujících bok po boku přicházejí různá očekávání, komunikační styly, hodnoty a zkušenosti. Toto sezení zkoumá, jak mohou lídři a týmy překonat stereotypy a přeměnit generační rozdíly v silnější spolupráci, důvěru a výkon.</p>
+            <p class="topic-list__desc">Účastníci získají praktické poznatky o komunikačních preferencích, pracovních očekáváních, zpětné vazbě a faktorech ovlivňujících angažovanost napříč generacemi.</p>
           </div>
 
-          <div style="padding: var(--space-8) 0; border-top: 1px solid var(--color-border);">
-            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-4);">Neustále zapnutí: Jak hyperkonektivita přetváří výkon, očekávání a wellbeing</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-3);">V mnoha organizacích se neustálá dostupnost stala normou. Digitální nástroje sice zvyšují efektivitu, ale mohou nenápadně narušovat soustředění, regeneraci a dlouhodobý výkon.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Toto sezení zkoumá psychologické a kognitivní dopady hyperkonektivity a nabízí praktické strategie pro udržení výkonu při ochraně energie, pozornosti a wellbeingu.</p>
+          <div class="topic-list__item">
+            <p class="topic-list__title">Neustále zapnutí: Jak hyperkonektivita přetváří výkon, očekávání a wellbeing</p>
+            <p class="topic-list__desc">V mnoha organizacích se neustálá dostupnost stala normou. Digitální nástroje sice zvyšují efektivitu, ale mohou nenápadně narušovat soustředění, regeneraci a dlouhodobý výkon.</p>
+            <p class="topic-list__desc">Toto sezení zkoumá psychologické a kognitivní dopady hyperkonektivity a nabízí praktické strategie pro udržení výkonu při ochraně energie, pozornosti a wellbeingu.</p>
           </div>
 
-          <div style="padding: var(--space-8) 0; border-top: 1px solid var(--color-border);">
-            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-4);">Vnitřní práce v práci: Jak se sebeuvědomění stává strategickou výhodou</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-3);">Sebeuvědomění ovlivňuje, jak lídři přijímají rozhodnutí, reagují na tlak, zvládají konflikty a budují důvěru.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Toto sezení pomáhá účastníkům rozpoznat vzorce formující jejich chování a styl vedení, posílit emoční inteligenci a rozvíjet větší flexibilitu a efektivitu v náročných situacích.</p>
+          <div class="topic-list__item">
+            <p class="topic-list__title">Vnitřní práce v práci: Jak se sebeuvědomění stává strategickou výhodou</p>
+            <p class="topic-list__desc">Sebeuvědomění ovlivňuje, jak lídři přijímají rozhodnutí, reagují na tlak, zvládají konflikty a budují důvěru.</p>
+            <p class="topic-list__desc">Toto sezení pomáhá účastníkům rozpoznat vzorce formující jejich chování a styl vedení, posílit emoční inteligenci a rozvíjet větší flexibilitu a efektivitu v náročných situacích.</p>
           </div>
 
-          <div style="padding: var(--space-8) 0; border-top: 1px solid var(--color-border);">
-            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-4);">Porozumění narcismu a jeho dopadu na mezilidské vztahy</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-3);">Narcismus je hojně diskutovaný, ale často nepochopený. Toto sezení nabízí vyvážené, psychologicky podložené porozumění narcistickým vzorcům a jejich vlivu na vztahy, komunikaci, wellbeing a pracovní dynamiku.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Účastníci získají větší jasnost ohledně relační zmatenosti, emočního vydírání, hranic a faktorů, které tyto dynamiky ztěžují rozpoznat.</p>
+          <div class="topic-list__item">
+            <p class="topic-list__title">Porozumění narcismu a jeho dopadu na mezilidské vztahy</p>
+            <p class="topic-list__desc">Narcismus je hojně diskutovaný, ale často nepochopený. Toto sezení nabízí vyvážené, psychologicky podložené porozumění narcistickým vzorcům a jejich vlivu na vztahy, komunikaci, wellbeing a pracovní dynamiku.</p>
+            <p class="topic-list__desc">Účastníci získají větší jasnost ohledně relační zmatenosti, emočního vydírání, hranic a faktorů, které tyto dynamiky ztěžují rozpoznat.</p>
           </div>
 
-          <div style="padding: var(--space-8) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
-            <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); line-height: 1.3; margin-bottom: var(--space-4);">Manifestujte život, který milujete: Věda za smysluplnou změnou</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-3);">Trvalá změna jen zřídka přichází pouze z motivace. Toto sezení zkoumá psychologické a neurovědecké principy ovlivňující chování, zvyky, pozornost a rozhodování.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.8;">Účastníci se naučí praktické strategie pro sladění každodenních akcí s smysluplnými cíli, překonávání nežádoucích vzorců a vytváření udržitelného osobního a profesního růstu.</p>
+          <div class="topic-list__item">
+            <p class="topic-list__title">Manifestujte život, který milujete: Věda za smysluplnou změnou</p>
+            <p class="topic-list__desc">Trvalá změna jen zřídka přichází pouze z motivace. Toto sezení zkoumá psychologické a neurovědecké principy ovlivňující chování, zvyky, pozornost a rozhodování.</p>
+            <p class="topic-list__desc">Účastníci se naučí praktické strategie pro sladění každodenních akcí s smysluplnými cíli, překonávání nežádoucích vzorců a vytváření udržitelného osobního a profesního růstu.</p>
           </div>
 
         </div>
 
         <!-- Přizpůsobeno -->
-        <p class="services__label" style="margin-bottom: var(--space-6);">Přizpůsobeno vaší organizaci</p>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); max-width: 60ch; line-height: 1.8; margin-bottom: var(--space-6);">Každá organizace má svou vlastní kulturu, výzvy a priority. Výše uvedená témata patří k nejžádanějším, všechna sezení však lze přizpůsobit konkrétním potřebám vašich týmů, lídrů nebo pracovní síly.</p>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 60ch; line-height: 1.8; margin-bottom: var(--space-10);">Ať hledáte posílení schopností vedení, zlepšení wellbeingu, podporu organizačních změn, zkvalitnění komunikace nebo řešení konkrétní pracovní výzvy, ráda navrhnu sezení v souladu s vašimi cíli.</p>
+        <p class="services__label" style="margin-bottom: var(--space-6);" data-reveal>Přizpůsobeno vaší organizaci</p>
+        <div class="prose" data-reveal data-delay="100">
+          <p>Každá organizace má svou vlastní kulturu, výzvy a priority. Výše uvedená témata patří k nejžádanějším, všechna sezení však lze přizpůsobit konkrétním potřebám vašich týmů, lídrů nebo pracovní síly.</p>
+          <p>Ať hledáte posílení schopností vedení, zlepšení wellbeingu, podporu organizačních změn, zkvalitnění komunikace nebo řešení konkrétní pracovní výzvy, ráda navrhnu sezení v souladu s vašimi cíli.</p>
+        </div>
 
         <!-- CTA -->
-        <p class="services__label" style="margin-bottom: var(--space-6);">Zahajme rozhovor</p>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); max-width: 52ch; line-height: 1.6; margin-bottom: var(--space-10);">Pokud zvažujete možnosti vzdělávání a rozvoje pro svou organizaci, ráda projednám vaše cíle a vytvořím program odpovídající vašim lidem, kultuře a obchodním potřebám.</p>
+        <p class="services__label" style="margin-top: var(--space-16); margin-bottom: var(--space-6);" data-reveal>Zahajme rozhovor</p>
+        <div class="prose" data-reveal data-delay="100">
+          <p class="pullquote">Pokud zvažujete možnosti vzdělávání a rozvoje pro svou organizaci, ráda projednám vaše cíle a vytvořím program odpovídající vašim lidem, kultuře a obchodním potřebám.</p>
+        </div>
 
         <a href="index.html" class="service-link service-link--back"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Zpět na hlavní stránku</a>
+
       </div>
     </section>
+
   </main>
 
   <footer class="footer" id="contact">

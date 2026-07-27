@@ -59,14 +59,27 @@
   </header>
 
   <main id="main">
-    <section style="padding: var(--space-24) var(--space-8) var(--space-16);">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-6);">How I can help</p>
-        <h1 style="font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 400; line-height: 1.1; color: var(--color-text); margin-bottom: var(--space-8);">Individual Sessions</h1>
 
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); max-width: 58ch; line-height: 1.8; margin-bottom: var(--space-6);">You don't have to keep pushing through life feeling stuck, overwhelmed, or disconnected. Change begins with understanding—why you feel the way you do, why the same patterns repeat, and how to finally move forward.</p>
+    <!-- Page hero -->
+    <section class="page-hero" aria-labelledby="sessions-title">
+      <div class="page-hero__inner">
+        <p class="page-hero__label" data-reveal>How I can help</p>
+        <h1 class="page-hero__title" id="sessions-title" data-reveal data-delay="100">
+          Individual Sessions
+        </h1>
+        <hr class="rule" data-reveal data-delay="200" />
+      </div>
+    </section>
 
-        <figure style="margin: 0 0 var(--space-8); line-height: 0; overflow: hidden; border-radius: 4px;">
+    <!-- Content -->
+    <section class="svc-content" aria-label="Individual sessions overview">
+      <div class="svc-content__inner">
+
+        <div class="prose" data-reveal>
+          <p class="lead">You don't have to keep pushing through life feeling stuck, overwhelmed, or disconnected. Change begins with understanding — why you feel the way you do, why the same patterns repeat, and how to finally move forward.</p>
+        </div>
+
+        <figure style="margin: var(--space-8) 0; line-height: 0; overflow: hidden; border-radius: 4px;" data-reveal data-delay="100">
           <img
             src="assets/images/Inner dialogue.png"
             alt="Inner dialogue — a visual metaphor for the introspective work done in individual sessions"
@@ -77,26 +90,31 @@
           />
         </figure>
 
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 58ch; line-height: 1.8; margin-bottom: var(--space-10);">These personal sessions are a space for you—to speak freely, to be truly heard, and to gain clarity on what's holding you back. Through deep, active listening and meaningful conversation, we uncover the real issues, challenge limiting beliefs, and shift the way you see yourself and your existence towards a more fulfilling life you love.</p>
+        <div class="prose" data-reveal data-delay="100">
+          <p>These personal sessions are a space for you — to speak freely, to be truly heard, and to gain clarity on what's holding you back. Through deep, active listening and meaningful conversation, we uncover the real issues, challenge limiting beliefs, and shift the way you see yourself and your existence towards a more fulfilling life you love.</p>
+        </div>
 
-        <ul role="list" style="list-style: none; padding: 0; margin: 0 0 var(--space-12) 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--space-4); max-width: 680px;">
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">A safe, supportive space</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Deep listening and insightful reflection</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Meaningful conversation</li>
-          <li style="padding: var(--space-5) var(--space-6); border-left: 2px solid var(--color-sage); background: var(--color-bg-secondary); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.5;">Practical tools, nervous system regulation and emotional processing</li>
+        <ul class="feature-cards" data-reveal data-delay="200">
+          <li>A safe, supportive space</li>
+          <li>Deep listening and insightful reflection</li>
+          <li>Meaningful conversation</li>
+          <li>Practical tools, nervous system regulation and emotional processing</li>
         </ul>
 
-        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: var(--color-accent); max-width: 50ch; line-height: 1.6; margin-bottom: var(--space-6);">If you're ready to break free from what no longer serves you and step into a life of clarity and joy, let's begin.</p>
+        <div class="prose" data-reveal data-delay="200">
+          <p class="pullquote">If you're ready to break free from what no longer serves you and step into a life of clarity and joy, let's begin.</p>
+          <p>Sessions are primarily online, offering flexibility and comfort, with in-person meetings available upon request.</p>
+        </div>
 
-        <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); max-width: 52ch; line-height: 1.7; margin-bottom: var(--space-8);">Sessions are primarily online, offering flexibility and comfort, with in-person meetings available upon request.</p>
-
-        <div style="margin-bottom: var(--space-10);">
+        <div style="margin-top: var(--space-10);" data-reveal data-delay="300">
           <a href="book-session-en.html" class="btn btn--primary">Book a session</a>
         </div>
 
         <a href="en.html" class="service-link service-link--back"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Back to home</a>
+
       </div>
     </section>
+
   </main>
 
   <footer class="footer" id="contact">

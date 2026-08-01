@@ -479,11 +479,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
-  /* Match the native aspect ratio of hands.png (1095x428) so the entire
-     image displays with no cropping at any viewport width */
-  aspect-ratio: 1095 / 428;
-  /* Soft fade on the left edge so the cream-toned image blends into the
-     cream page background where it meets the headline text */
+  /* Match the native aspect ratio of Hero.png (1536x920) */
+  aspect-ratio: 1536 / 920;
   -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 100%);
           mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 100%);
 }
@@ -492,7 +489,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;       /* cover with matching aspect = full image, no crop */
+  object-fit: cover;
   object-position: center;
   transition: transform 0.8s ease-out;
 }
@@ -620,20 +617,16 @@
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 560px;
 }
 
 .about__image {
   position: relative;
-  overflow: hidden;
-  min-height: 480px;
 }
 
 .about__image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  display: block;
   transition: transform 0.8s ease-out;
 }
 .about__image:hover img {
@@ -792,7 +785,7 @@
   }
   .hero__image {
     height: auto;
-    aspect-ratio: 1095 / 428;    /* native — full image visible */
+    aspect-ratio: 1536 / 920;
     width: 100%;
     order: -1;                   /* image above on tablet */
     -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 92%, transparent 100%);
@@ -813,10 +806,6 @@
 
   /* About */
   .about { grid-template-columns: 1fr; }
-  .about__image {
-    height: 60vw;
-    min-height: 360px;
-  }
   .about__panel {
     padding: var(--space-12) var(--space-8);
   }
@@ -847,8 +836,8 @@
     padding: calc(var(--space-12) + 72px) var(--space-5) var(--space-10);
   }
   .hero__image {
-    height: 72vw;
-    min-height: 260px;
+    aspect-ratio: 1536 / 920;
+    height: auto;
   }
 
   /* Services */
@@ -863,9 +852,6 @@
   .service-item:last-child { border-bottom: none; }
 
   /* About */
-  .about__image {
-    height: 80vw;
-  }
   .about__panel {
     padding: var(--space-10) var(--space-5);
   }
@@ -1155,11 +1141,6 @@
 @media (max-width: 1023px) {
   .bio__media {
     max-width: 420px;
-  }
-  .bio__media img {
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    object-position: center top;
   }
 }
 

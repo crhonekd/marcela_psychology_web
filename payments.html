@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="cs" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Platby a příspěvky — jednoduché a flexibilní možnosti platby za konzultace s Marcelou Crhonkovou, MSc." />
+  <title>Platby a příspěvky — Marcela Crhonkova, MSc.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ── Payment page styles ── */
+    .payments-section {
+      padding: var(--space-16) var(--space-8);
+    }
+
+    .payments-inner {
+      max-width: var(--content-narrow);
+      margin-inline: auto;
+    }
+
+    .payments-intro {
+      margin-bottom: var(--space-16);
+    }
+
+    /* Payment block card */
+    .payment-block {
+      border-top: 1px solid var(--color-border);
+      padding-top: var(--space-10);
+      margin-bottom: var(--space-12);
+    }
+
+    .payment-block__heading {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      color: var(--color-text);
+      margin-bottom: var(--space-8);
+      letter-spacing: 0.01em;
+    }
+
+    .payment-block__body {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-10);
+      align-items: start;
+    }
+
+    .payment-block__body--single {
+      grid-template-columns: 1fr;
+    }
+
+    /* QR code column */
+    .payment-block__qr {
+      text-align: center;
+    }
+
+    .payment-block__qr-frame {
+      display: inline-block;
+      border: 1px solid var(--color-border);
+      background: #fff;
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+    }
+
+    .payment-block__qr-img {
+      display: block;
+      width: 160px;
+      height: 160px;
+    }
+
+    .payment-block__qr-caption {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      margin-top: var(--space-3);
+      max-width: 160px;
+      line-height: 1.5;
+    }
+
+    /* Definition list for bank details */
+    .payment-dl {
+      display: grid;
+      gap: var(--space-4);
+    }
+
+    .payment-dl__row {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: var(--space-4);
+      align-items: baseline;
+      padding-bottom: var(--space-4);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .payment-dl__row:last-child {
+      border-bottom: none;
+    }
+
+    .payment-dl dt {
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding-top: 0.1em;
+    }
+
+    .payment-dl dd {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      font-weight: 400;
+    }
+
+    .payment-dl dd.code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: var(--text-sm);
+      letter-spacing: 0.05em;
+      color: var(--color-accent);
+      font-weight: 600;
+    }
+
+    .payment-note {
+      margin-top: var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      font-style: italic;
+      line-height: 1.7;
+    }
+
+    /* Closing thank-you inside dark CTA */
+    .payment-thanks {
+      margin-top: var(--space-8);
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(249, 247, 244, 0.7);
+      letter-spacing: 0.01em;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .payments-section {
+        padding: var(--space-10) var(--space-5);
+      }
+
+      .payment-block__body {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-block__qr {
+        text-align: left;
+      }
+
+      .payment-dl__row {
+        grid-template-columns: 7rem 1fr;
+        gap: var(--space-3);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Přeskočit na obsah</a>
+
+  <header>
+    <nav class="nav" aria-label="Hlavní navigace">
+      <a href="index.html" class="nav__logo" aria-label="Holistická psychologie — domů">
+        <img class="nav__logo-img" src="transparent_logo.png" alt="" width="869" height="768" />
+      </a>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li class="nav__close-item">
+          <button class="nav__close" aria-label="Zavřít menu">
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+        <li><a href="about.html">O mně</a></li>
+        <li><a href="testimonials.html">Reference</a></li>
+        <li><a href="index.html#services">Služby</a></li>
+        <li><a href="webinars.html">Webináře</a></li>
+        <li><a href="retreats.html">Retreaty</a></li>
+        <li><a href="index.html#contact" class="nav__contact-btn">Kontakt</a></li>
+        <li class="nav__lang"><a href="payments-en.html" hreflang="en" aria-label="Switch to English">EN</a></li>
+      </ul>
+
+      <div class="nav__backdrop" aria-hidden="true"></div>
+
+      <button
+        class="nav__hamburger"
+        aria-label="Otevřít menu"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- Page hero -->
+    <section class="page-hero" aria-labelledby="payments-title">
+      <div class="page-hero__inner">
+        <p class="page-hero__label" data-reveal>Jednoduché a přehledné</p>
+        <h1 class="page-hero__title" id="payments-title" data-reveal data-delay="100">
+          Platby a příspěvky
+        </h1>
+        <hr class="rule" data-reveal data-delay="200" />
+      </div>
+    </section>
+
+    <!-- Intro + payment sections -->
+    <section class="payments-section" aria-label="Informace o platbách">
+      <div class="payments-inner">
+
+        <div class="payments-intro prose" data-reveal>
+          <p class="lead">
+            Platbu můžete provést jednoduše a flexibilně. Zvolte způsob, který vám nejlépe vyhovuje.
+          </p>
+        </div>
+
+        <!-- CZK Payments -->
+        <div class="payment-block" data-reveal>
+          <h2 class="payment-block__heading">Platby v Kč</h2>
+          <div class="payment-block__body">
+
+            <div class="payment-block__qr">
+              <div class="payment-block__qr-frame">
+                <img
+                  class="payment-block__qr-img"
+                  src="assets/images/qr-czk.jpg"
+                  alt="QR kód pro platbu v Kč — naskenujte ve své bankovní aplikaci"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                />
+              </div>
+              <p class="payment-block__qr-caption">Naskenujte ve své bankovní aplikaci a upravte částku přímo v ní</p>
+            </div>
+
+            <div>
+              <dl class="payment-dl">
+                <div class="payment-dl__row">
+                  <dt>Příjemce</dt>
+                  <dd>Marcela Crhonkova</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>Banka</dt>
+                  <dd>Raiffeisenbank</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>Číslo účtu</dt>
+                  <dd class="code">3165622004/5500</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>IBAN</dt>
+                  <dd class="code">CZ69 5500 0000 0031 6562 2004</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>SWIFT</dt>
+                  <dd class="code">RZBCCZPP</dd>
+                </div>
+              </dl>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- EUR Payments -->
+        <div class="payment-block" data-reveal data-delay="100">
+          <h2 class="payment-block__heading">Zahraniční platby (EUR)</h2>
+          <div class="payment-block__body payment-block__body--single">
+
+            <div>
+              <dl class="payment-dl">
+                <div class="payment-dl__row">
+                  <dt>Příjemce</dt>
+                  <dd>Marcela Crhonkova</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>Banka</dt>
+                  <dd>Raiffeisenbank</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>IBAN</dt>
+                  <dd class="code">CZ32 5500 0000 0010 2618 2134</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>BIC / SWIFT</dt>
+                  <dd class="code">RZBCCZPP</dd>
+                </div>
+                <div class="payment-dl__row">
+                  <dt>Adresa</dt>
+                  <dd>Biskupcova 3, Praha 3, 130 00, Czech Republic</dd>
+                </div>
+              </dl>
+              <p class="payment-note">
+                Uveďte prosím své jméno a typ služby jako zprávu pro příjemce.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="about-cta" aria-labelledby="payments-cta-title">
+      <div class="about-cta__inner">
+        <p class="about-cta__label" data-reveal>Dotazy?</p>
+        <p class="about-cta__body" data-reveal data-delay="100">
+          V případě dotazů ohledně platby mě neváhejte kontaktovat.
+        </p>
+        <a href="mailto:office@marcelacrhonkova.com" class="btn btn--light" data-reveal data-delay="200">
+          Napište mi
+        </a>
+        <p class="payment-thanks" data-reveal data-delay="300">
+          Děkuji za vaši důvěru a podporu.
+        </p>
+        <a href="index.html" class="service-link service-link--back" style="color: rgba(249,247,244,0.5); margin-top: var(--space-8);">
+          <span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Zpět na hlavní stránku
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="footer__inner">
+
+        <div class="footer__brand">
+          <p class="footer__brand-name">Marcela Crhonkova, MSc.</p>
+          <p class="footer__brand-tagline">
+            Holistická psychologie — péče o mysl, tělo a duši.
+          </p>
+        </div>
+
+        <div>
+          <p class="footer__col-label">Navigace</p>
+          <ul class="footer__links" role="list">
+            <li><a href="about.html">O mně</a></li>
+            <li><a href="individual-sessions.html">Individuální konzultace</a></li>
+            <li><a href="webinars.html">Webináře</a></li>
+            <li><a href="retreats.html">Retreaty</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-label">Kontakt</p>
+          <address style="font-style: normal;">
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <a href="mailto:office@marcelacrhonkova.com">office@marcelacrhonkova.com</a>
+            </div>
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+              <a href="https://www.linkedin.com/in/marcela-crhonkova-65221653" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+            <div class="footer__contact-item">
+              <svg class="footer__contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+              <a href="https://www.instagram.com/marcela_holisticpsychology/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright">
+          &copy; 2026 Marcela Crhonkova, MSc. Všechna práva vyhrazena.
+        </p>
+        <a href="payments-en.html" class="footer__lang-switch" hreflang="en">English version →</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+
+  <!-- Cookie consent -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-labelledby="cookieTitle" aria-modal="false">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__text">
+        <h2 class="cookie-banner__title" id="cookieTitle">Informace o cookies</h2>
+        <p class="cookie-banner__desc">
+          Tento web používá nezbytné cookies pro svůj provoz a volitelné analytické cookies,
+          které nám pomáhají pochopit, jak návštěvníci web nacházejí. Své preference můžete kdykoli změnit.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--cookie-accept" id="cookieAcceptAll">Přijmout vše</button>
+        <button class="btn btn--cookie-necessary" id="cookieNecessary">Pouze nezbytné</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

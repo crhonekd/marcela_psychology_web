@@ -447,6 +447,10 @@
   color: var(--color-accent);
 }
 
+.hero__headline--compact {
+  font-size: var(--text-2xl);
+}
+
 .hero__sub {
   font-family: var(--font-body);
   font-size: var(--text-lg);
@@ -927,7 +931,6 @@
   line-height: 1.85;
   color: var(--color-text-muted);
   margin-bottom: var(--space-6);
-  max-width: 64ch;          /* keep lines to a comfortable reading measure */
 }
 .prose p:last-child { margin-bottom: 0; }
 
@@ -992,12 +995,12 @@
 }
 
 .bio__grid .prose {
-  max-width: 62ch;
+  max-width: none;
   margin-inline: auto;
 }
 
 .bio__media {
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto clamp(var(--space-10), 5vw, var(--space-12));
 }
 .bio__media img {
@@ -1054,7 +1057,7 @@
 }
 
 .journey__figure {
-  max-width: 720px;
+  max-width: none;
   margin: 0 auto clamp(var(--space-10), 5vw, var(--space-12));
 }
 .journey__figure img {
@@ -1066,7 +1069,7 @@
 }
 
 .journey__prose {
-  max-width: 62ch;
+  max-width: none;
   margin-inline: auto;
 }
 .journey__prose p { color: var(--color-text); }
@@ -1140,7 +1143,7 @@
 
 @media (max-width: 1023px) {
   .bio__media {
-    max-width: 420px;
+    max-width: none;
   }
 }
 
@@ -1168,7 +1171,7 @@
 }
 
 .booking-intro__inner {
-  max-width: var(--content-narrow);
+  max-width: var(--content-default);
   margin-inline: auto;
   padding-inline: var(--space-6);
 }
@@ -1223,7 +1226,7 @@
 }
 
 .booking-form-section__inner {
-  max-width: var(--content-narrow);
+  max-width: var(--content-default);
   margin-inline: auto;
   padding-inline: var(--space-6);
 }
@@ -1502,16 +1505,15 @@
   font-style: italic;
   font-size: var(--text-lg);
   color: var(--color-text-muted);
-  max-width: 640px;
+  max-width: none;
   line-height: 1.6;
   margin-bottom: var(--space-10);
 }
 
-/* Prose blocks inside service pages: constrain at container level with a
-   pixel value so lead, body, and pullquote all share the same right edge
-   regardless of their font-size (ch units are font-relative). */
+/* Prose blocks inside service pages: no additional constraint — the 960px
+   content rail from the parent container is the reading measure. */
 .svc-content__inner .prose {
-  max-width: 640px;
+  max-width: none;
 }
 .svc-content__inner .prose p {
   max-width: none;
@@ -1523,9 +1525,15 @@
   padding: 0;
   margin-bottom: var(--space-12);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-4);
-  max-width: 680px;
+  max-width: none;
+}
+
+@media (max-width: 600px) {
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .feature-cards li {
@@ -1539,7 +1547,7 @@
 
 /* Topic list — webinars "Popular Topics" section */
 .topic-list {
-  max-width: 720px;
+  max-width: none;
   margin-bottom: var(--space-16);
 }
 
@@ -1570,4 +1578,792 @@
 
 .topic-list__desc:last-child {
   margin-bottom: 0;
+}
+
+/* ============================================================
+   GLOBAL TEXT JUSTIFICATION
+   ============================================================ */
+
+.prose p,
+.svc-content__inner p,
+.bio__grid p,
+.bio__grid .prose p,
+.journey__prose p,
+.about__body,
+.booking-intro__inner p,
+.booking-form-section__sub,
+.about-cta__body,
+.retreat-intro,
+.retreat-pillar__desc,
+.retreat-faq__answer,
+.retreat-quote__body,
+.retreat-steps__desc,
+.retreat-cta__body,
+.topic-list__desc {
+  text-align: justify;
+}
+
+/* ── Shared utility: section label ──────────────────────────── */
+
+.section-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+}
+
+/* ── Shared utility: full-bleed image ───────────────────────── */
+
+.full-bleed-img {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+  line-height: 0;
+  overflow: hidden;
+}
+
+/* When .full-bleed-img is inside a container that already provides
+   max-width + padding, remove the extra padding to avoid double-inset */
+.svc-content__inner .full-bleed-img {
+  padding-inline: 0;
+  max-width: none;
+}
+
+.full-bleed-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+}
+
+/* ============================================================
+   RETREAT PAGE — cinematic hero, content sections, components
+   ============================================================ */
+
+/* ── Cinematic hero ─────────────────────────────────────────── */
+
+.retreat-hero {
+  position: relative;
+  min-height: clamp(480px, 62vh, 760px);
+  background: var(--color-dark-bg);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding-top: calc(var(--space-24) + 48px);
+}
+
+.retreat-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.52;
+}
+
+.retreat-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(19, 35, 58, 0) 20%, rgba(19, 35, 58, 0.92) 100%);
+}
+
+.retreat-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-bottom: var(--space-16);
+}
+
+.retreat-hero__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+  margin-bottom: var(--space-4);
+}
+
+.retreat-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 1rem + 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  color: var(--color-dark-text);
+  margin-bottom: var(--space-5);
+  max-width: 18ch;
+}
+
+.retreat-hero__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: rgba(249, 247, 244, 0.78);
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+  max-width: 46ch;
+}
+
+.retreat-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ── Pill badges ────────────────────────────────────────────── */
+
+.retreat-pill {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-5);
+  border-radius: 100px;
+}
+
+.retreat-pill--outline {
+  color: var(--color-terracotta);
+  border: 1px solid var(--color-terracotta);
+}
+
+.retreat-pill--ghost {
+  color: rgba(249, 247, 244, 0.75);
+  border: 1px solid rgba(249, 247, 244, 0.3);
+}
+
+.retreat-pill--filled {
+  color: #fff;
+  background: var(--color-terracotta);
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+.retreat-pill--filled:hover {
+  opacity: 0.85;
+}
+
+/* ── Retreat content sections ───────────────────────────────── */
+
+.retreat-section {
+  padding-block: var(--space-16);
+}
+
+.retreat-section--alt {
+  background: var(--color-bg-secondary);
+}
+
+.retreat-section--dark {
+  background: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+.retreat-section__inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.retreat-section__inner--narrow {
+  max-width: var(--content-default);
+}
+
+.retreat-section__inner--centered {
+  text-align: center;
+}
+
+/* ── Retreat list (dashed items) ────────────────────────────── */
+
+.retreat-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.retreat-list__item {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.7;
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-5);
+}
+
+.retreat-list__item:last-child {
+  border-bottom: none;
+}
+
+.retreat-list__dash {
+  color: var(--color-terracotta);
+  flex-shrink: 0;
+}
+
+/* ── Retreat feature cards (terracotta left border) ──────────── */
+
+.retreat-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .retreat-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+.retreat-cards__item {
+  padding: var(--space-5) var(--space-6);
+  border-left: 2px solid var(--color-terracotta);
+  background: var(--color-bg-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+/* ── Retreat pillar cards (terracotta top border) ───────────── */
+
+.retreat-pillars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 600px) {
+  .retreat-pillars {
+    grid-template-columns: 1fr;
+  }
+}
+
+.retreat-pillar {
+  padding: var(--space-8) var(--space-6);
+  border-top: 2px solid var(--color-terracotta);
+  background: var(--color-bg);
+}
+
+.retreat-pillar__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+  line-height: 1.3;
+}
+
+.retreat-pillar__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* ── Retreat dark quote section ─────────────────────────────── */
+
+.retreat-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.6rem, 1rem + 2.5vw, 3rem);
+  font-weight: 300;
+  color: var(--color-dark-text);
+  line-height: 1.4;
+  margin-bottom: var(--space-10);
+}
+
+.retreat-quote__body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: rgba(249, 247, 244, 0.65);
+  line-height: 1.85;
+  max-width: 52ch;
+  margin: 0 auto var(--space-8);
+  text-align: justify;
+}
+
+/* ── Retreat FAQ accordion ──────────────────────────────────── */
+
+.retreat-faq {
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-6) 0;
+}
+
+.retreat-faq:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.retreat-faq summary {
+  list-style: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.retreat-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.retreat-faq summary::after {
+  content: '+';
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  transition: transform var(--transition);
+  line-height: 1;
+}
+
+.retreat-faq[open] summary::after {
+  content: '−';
+}
+
+.retreat-faq__answer {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-top: var(--space-5);
+  max-width: 60ch;
+  text-align: justify;
+}
+
+/* ── Retreat numbered steps ─────────────────────────────────── */
+
+.retreat-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.retreat-steps__item {
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.retreat-steps__item:last-child {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.retreat-steps__number {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 300;
+  color: var(--color-terracotta);
+  line-height: 1.1;
+}
+
+.retreat-steps__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  line-height: 1.3;
+  margin-bottom: var(--space-2);
+}
+
+.retreat-steps__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* ── Retreat split image + quote ────────────────────────────── */
+
+.retreat-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.retreat-split__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.retreat-split__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-12) var(--space-10);
+  background: var(--color-bg-secondary);
+}
+
+.retreat-split__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.25rem, 0.8rem + 1.8vw, 2.1rem);
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1.55;
+  text-align: center;
+  max-width: 22ch;
+}
+
+/* ── Retreat CTA ────────────────────────────────────────────── */
+
+.retreat-cta {
+  padding-block: var(--space-20) var(--space-12);
+}
+
+.retreat-cta__headline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem);
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1.35;
+  margin-bottom: var(--space-6);
+}
+
+.retreat-cta__body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  line-height: 1.85;
+  text-align: justify;
+}
+
+/* ── Retreat pullquote (light section) ──────────────────────── */
+
+.retreat-pullquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-lg);
+  color: var(--color-accent);
+  max-width: 50ch;
+  line-height: 1.55;
+  margin-top: var(--space-10);
+}
+
+/* ── Retreat italic note ────────────────────────────────────── */
+
+.retreat-note {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-top: var(--space-6);
+  font-style: italic;
+}
+
+/* ── Retreat intro paragraph ────────────────────────────────── */
+
+.retreat-intro {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  max-width: none;
+  line-height: 1.85;
+  margin-bottom: var(--space-6);
+  text-align: justify;
+}
+
+.retreat-intro--muted {
+  color: var(--color-text-muted);
+}
+
+/* ── Retreat responsive ─────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .retreat-split {
+    grid-template-columns: 1fr;
+  }
+  .retreat-split__text {
+    min-height: 180px;
+    padding: var(--space-10) var(--space-8);
+  }
+}
+
+/* ============================================================
+   RESERVATION PAGE — payment timeline, includes, venue, policy
+   ============================================================ */
+
+.payment-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--color-border);
+  margin-top: var(--space-10);
+}
+
+.payment-step {
+  padding: var(--space-8) var(--space-6);
+  border-right: 1px solid var(--color-border);
+}
+.payment-step:last-child {
+  border-right: none;
+}
+
+.payment-step__amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem);
+  font-weight: 300;
+  color: var(--color-terracotta);
+  line-height: 1;
+  margin-bottom: var(--space-3);
+}
+
+.payment-step__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.payment-step__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.include-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 600px) {
+  .include-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.include-item {
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-bg);
+  border-left: 2px solid var(--color-sage);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.65;
+}
+
+.venue-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.venue-split__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.venue-split__text {
+  padding: var(--space-12) var(--space-10);
+  background: var(--color-dark-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.policy-table tr {
+  border-bottom: 1px solid var(--color-border);
+}
+.policy-table tr:last-child {
+  border-bottom: none;
+}
+.policy-table td {
+  padding: var(--space-4) var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.65;
+  vertical-align: top;
+}
+.policy-table td:first-child {
+  color: var(--color-text-muted);
+  padding-right: var(--space-6);
+  white-space: nowrap;
+  font-size: var(--text-xs);
+  padding-top: var(--space-5);
+}
+
+.reservation-price {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 2rem + 3vw, 5.5rem);
+  font-weight: 300;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.reservation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+  column-gap: var(--space-8);
+}
+
+.reservation-list__item {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-1) 0;
+  break-inside: avoid;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.reservation-list__dash {
+  color: var(--color-sage);
+  flex-shrink: 0;
+}
+
+.reservation-accommodation {
+  padding: var(--space-8);
+  background: var(--color-bg-secondary);
+  border-left: 2px solid var(--color-sage);
+  margin-bottom: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .payment-timeline {
+    grid-template-columns: 1fr;
+  }
+  .payment-step {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .payment-step:last-child {
+    border-bottom: none;
+  }
+  .venue-split {
+    grid-template-columns: 1fr;
+  }
+  .venue-split__text {
+    padding: var(--space-10) var(--space-6);
+  }
+  .details-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .reservation-list {
+    columns: 1;
+  }
+}
+
+/* ============================================================
+   TESTIMONIALS PAGE — video grids, captions
+   ============================================================ */
+
+.testi-section {
+  padding-block: clamp(var(--space-12), 7vw, var(--space-20));
+}
+.testi-section + .testi-section {
+  padding-top: 0;
+}
+
+.testi-inner {
+  max-width: var(--content-default);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+.testi__label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  text-align: center;
+  margin-bottom: var(--space-10);
+}
+
+.testi-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-inline: auto;
+  max-width: var(--content-default);
+  margin-block: 0;
+}
+
+.video-grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.video-grid--portrait {
+  grid-template-columns: repeat(2, minmax(0, 300px));
+  justify-content: center;
+}
+
+.video-grid--landscape {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-card video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-lg);
+  background: var(--color-dark-bg);
+}
+
+.video-card__caption {
+  font-family: var(--font-display);
+  font-size: var(--text-base);
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.video-card__caption strong {
+  font-style: normal;
+  color: var(--color-text);
+}
+
+@media (max-width: 639px) {
+  .video-grid--portrait,
+  .video-grid--landscape {
+    grid-template-columns: 1fr;
+  }
+  .video-grid--portrait {
+    max-width: 360px;
+    margin-inline: auto;
+  }
 }

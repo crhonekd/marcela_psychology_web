@@ -17,117 +17,6 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <style>
-    /* ── Platební harmonogram ─────────────────────────────── */
-    .payment-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--color-border);
-      margin-top: var(--space-10);
-    }
-    .payment-step {
-      padding: var(--space-8) var(--space-6);
-      border-right: 1px solid var(--color-border);
-    }
-    .payment-step:last-child { border-right: none; }
-    .payment-step__amount {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem);
-      font-weight: 300;
-      color: var(--color-terracotta);
-      line-height: 1;
-      margin-bottom: var(--space-3);
-    }
-    .payment-step__label {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-3);
-    }
-    .payment-step__desc {
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-    }
-    @media (max-width: 640px) {
-      .payment-timeline { grid-template-columns: 1fr; }
-      .payment-step { border-right: none; border-bottom: 1px solid var(--color-border); }
-      .payment-step:last-child { border-bottom: none; }
-    }
-
-    /* ── Mřížka zahrnutého ────────────────────────────────── */
-    .include-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: var(--space-4);
-      max-width: 920px;
-    }
-    .include-item {
-      padding: var(--space-5) var(--space-6);
-      background: var(--color-bg);
-      border-left: 2px solid var(--color-sage);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-    }
-
-    /* ── Rozdělené zobrazení místa ────────────────────────── */
-    .venue-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .venue-split__img { width: 100%; height: auto; display: block; }
-    .venue-split__text {
-      padding: var(--space-12) var(--space-10);
-      background: var(--color-dark-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    @media (max-width: 640px) {
-      .venue-split { grid-template-columns: 1fr; }
-      .venue-split__text { padding: var(--space-10) var(--space-6); }
-    }
-
-    /* ── Dvousloupcové detaily ────────────────────────────── */
-    .details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-12);
-      max-width: 900px;
-    }
-    @media (max-width: 640px) {
-      .details-grid { grid-template-columns: 1fr; gap: var(--space-10); }
-    }
-
-    /* ── Tabulka storno podmínek ──────────────────────────── */
-    .policy-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .policy-table tr { border-bottom: 1px solid var(--color-border); }
-    .policy-table tr:last-child { border-bottom: none; }
-    .policy-table td {
-      padding: var(--space-4) var(--space-2);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-      vertical-align: top;
-    }
-    .policy-table td:first-child {
-      color: var(--color-text-muted);
-      padding-right: var(--space-6);
-      white-space: nowrap;
-      font-size: var(--text-xs);
-      padding-top: var(--space-5);
-    }
-  </style>
 </head>
 <body>
 
@@ -146,7 +35,7 @@
             <span></span>
           </button>
         </li>
-        <li><a href="index.html#about">O mně</a></li>
+        <li><a href="about.html">O mně</a></li>
         <li><a href="testimonials.html">Reference</a></li>
         <li><a href="index.html#services">Služby</a></li>
         <li><a href="webinars.html">Webináře</a></li>
@@ -173,115 +62,116 @@
   <main id="main">
 
     <!-- ── Hero ──────────────────────────────────────────────── -->
-    <section style="position: relative; min-height: clamp(420px, 58vh, 700px); background: var(--color-dark-bg); overflow: hidden; display: flex; align-items: flex-end; padding-top: calc(var(--space-24) + 48px);">
+    <section class="retreat-hero">
       <img
         src="assets/images/retreat-hero.jpg"
         alt="Klidná pobřežní krajina — místo konání Reset Retreatu"
         loading="eager"
-        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.45;"
+        class="retreat-hero__bg"
+        style="opacity: 0.45;"
       />
-      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(19,35,58,0.05) 0%, rgba(19,35,58,0.90) 100%);"></div>
-      <div class="container" style="position: relative; z-index: 1; width: 100%; padding-bottom: var(--space-16);">
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-4);">Rezervace místa</p>
-        <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 1rem + 4.5vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--color-dark-text); margin-bottom: var(--space-5); max-width: 22ch;">The Reset Retreat: Návrat k sobě</h1>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6);">
-          <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(249,247,244,0.75); border: 1px solid rgba(249,247,244,0.3); padding: var(--space-2) var(--space-5); border-radius: 100px;">Již brzy</span>
-          <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(249,247,244,0.75); border: 1px solid rgba(249,247,244,0.3); padding: var(--space-2) var(--space-5); border-radius: 100px;">5 nocí &nbsp;·&nbsp; vše v ceně</span>
+      <div class="retreat-hero__overlay"></div>
+      <div class="container retreat-hero__content">
+        <p class="retreat-hero__label">Rezervace místa</p>
+        <h1 class="retreat-hero__title" style="max-width: 22ch;">The Reset Retreat: Návrat k sobě</h1>
+        <div class="retreat-hero__actions" style="margin-bottom: var(--space-6);">
+          <span class="retreat-pill retreat-pill--ghost">Již brzy</span>
+          <span class="retreat-pill retreat-pill--ghost">5 nocí &nbsp;·&nbsp; vše v ceně</span>
         </div>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: rgba(249,247,244,0.75); line-height: 1.5; max-width: 46ch;">Terapeutický retreat pro ženy, které vstupují do nové životní etapy.</p>
+        <p class="retreat-hero__subtitle">Terapeutický retreat pro ženy, které vstupují do nové životní etapy.</p>
       </div>
     </section>
 
     <!-- ── Investice ──────────────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8) var(--space-12);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-6);" data-reveal>Vaše investice</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>Vaše investice</p>
 
-        <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);" data-reveal data-delay="100">
-          <span style="font-family: var(--font-display); font-size: clamp(3rem, 2rem + 3vw, 5.5rem); font-weight: 300; color: var(--color-accent); line-height: 1;">Plná cena: 2 000 €</span>
+        <div data-reveal data-delay="100">
+          <span class="reservation-price">Plná cena: 2 000 €</span>
         </div>
 
       </div>
     </section>
 
     <!-- ── Jak se přihlásit ──────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8) var(--space-12); background: var(--color-bg-secondary);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>Jak se přihlásit</p>
-        <ol style="list-style: none; padding: 0; margin: 0;">
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal>
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">1.</span>
-            <div style="padding-top: 0.25em;">
-              <p style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; color: var(--color-text); line-height: 1.4; margin: 0 0 var(--space-2);">Vyplňte registrační formulář</p>
-              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin: 0;">Rezervujte si své místo prostřednictvím registračního formuláře.</p>
+    <section class="retreat-section retreat-section--alt">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>Jak se přihlásit</p>
+        <ol class="retreat-steps">
+          <li class="retreat-steps__item" data-reveal>
+            <span class="retreat-steps__number">1.</span>
+            <div>
+              <p class="retreat-steps__title">Vyplňte registrační formulář</p>
+              <p class="retreat-steps__desc">Rezervujte si své místo prostřednictvím registračního formuláře.</p>
             </div>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal data-delay="100">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">2.</span>
-            <div style="padding-top: 0.25em;">
-              <p style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; color: var(--color-text); line-height: 1.4; margin: 0 0 var(--space-2);">Uhraďte nevratnou zálohu 500 €</p>
-              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin: 0;">Vaše místo bude potvrzeno po obdržení zálohy.</p>
+          <li class="retreat-steps__item" data-reveal data-delay="100">
+            <span class="retreat-steps__number">2.</span>
+            <div>
+              <p class="retreat-steps__title">Uhraďte nevratnou zálohu 500 €</p>
+              <p class="retreat-steps__desc">Vaše místo bude potvrzeno po obdržení zálohy.</p>
             </div>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal data-delay="200">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">3.</span>
-            <div style="padding-top: 0.25em;">
-              <p style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; color: var(--color-text); line-height: 1.4; margin: 0 0 var(--space-2);">Uhraďte 50 % zbývající částky</p>
-              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin: 0;">Tato část platby je splatná přibližně 3 měsíce před začátkem retreatu.</p>
+          <li class="retreat-steps__item" data-reveal data-delay="200">
+            <span class="retreat-steps__number">3.</span>
+            <div>
+              <p class="retreat-steps__title">Uhraďte 50 % zbývající částky</p>
+              <p class="retreat-steps__desc">Tato část platby je splatná přibližně 3 měsíce před začátkem retreatu.</p>
             </div>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0;" data-reveal data-delay="300">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">4.</span>
-            <div style="padding-top: 0.25em;">
-              <p style="font-family: var(--font-body); font-size: var(--text-base); font-weight: 500; color: var(--color-text); line-height: 1.4; margin: 0 0 var(--space-2);">Uhraďte zbývající částku</p>
-              <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; margin: 0;">Doplatek je splatný přibližně 6 týdnů před začátkem retreatu.</p>
+          <li class="retreat-steps__item" data-reveal data-delay="300">
+            <span class="retreat-steps__number">4.</span>
+            <div>
+              <p class="retreat-steps__title">Uhraďte zbývající částku</p>
+              <p class="retreat-steps__desc">Doplatek je splatný přibližně 6 týdnů před začátkem retreatu.</p>
             </div>
           </li>
         </ol>
         <div style="margin-top: var(--space-10);" data-reveal data-delay="400">
-          <a href="register-pay.html" class="btn btn--primary" style="font-size: var(--text-base); padding: var(--space-4) var(--space-10);">Registrovat se a zaplatit →</a>
+          <a href="register-pay.html" class="btn btn--primary">Registrovat se a zaplatit →</a>
         </div>
       </div>
     </section>
 
     <!-- ── Obrazová pauza — koláž ─────────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true" style="overflow: hidden;">
       <img
         src="assets/images/zeny.png"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
+        style="display: block; margin-block: -18% -18%;"
       />
     </div>
 
     <!-- ── Co je zahrnuto v ceně ──────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>Co je zahrnuto v ceně</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>Co je zahrnuto v ceně</p>
 
         <!-- Ubytování — podrobný blok -->
-        <div style="max-width: 920px; padding: var(--space-8); background: var(--color-bg-secondary); border-left: 2px solid var(--color-sage); margin-bottom: var(--space-6);" data-reveal>
-          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-4);">Ubytování</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-3);">5 nocí v nádherné, vile navržené a právě pro retreaty v klidném prostředí (sdílené dvoulůžkové pokoje).</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-5);">Vila nabízí ideální prostor pro odpočinek, propojení, jógu, meditaci a celkovou pohodu.</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-3);">K dispozici budete mít:</p>
-          <ul role="list" style="list-style: none; padding: 0; margin: 0 0 var(--space-5); columns: 2; column-gap: var(--space-8);">
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>sdílené pokoje</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>soukromé koupelny</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>100 m² Yoga Shala</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>venkovní prostor pro cvičení</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>posilovnu</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>místnost pro masáže</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>jacuzzi/bazén</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>kuchyň</li>
+        <div class="reservation-accommodation" data-reveal>
+          <p class="services__label" style="margin-bottom: var(--space-4);">Ubytování</p>
+          <p style="font-size: var(--text-base); line-height: 1.75; margin-bottom: var(--space-3);">5 nocí v nádherné, vile navržené a právě pro retreaty v klidném prostředí (sdílené dvoulůžkové pokoje).</p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-5);">Vila nabízí ideální prostor pro odpočinek, propojení, jógu, meditaci a celkovou pohodu.</p>
+          <p class="services__label" style="margin-bottom: var(--space-3);">K dispozici budete mít:</p>
+          <ul role="list" class="reservation-list" style="margin-bottom: var(--space-5);">
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>sdílené pokoje</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>soukromé koupelny</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>100 m² Yoga Shala</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>venkovní prostor pro cvičení</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>posilovnu</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>místnost pro masáže</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>jacuzzi/bazén</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>kuchyň</li>
           </ul>
-          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-3);">Součástí je také:</p>
-          <ul role="list" style="list-style: none; padding: 0; margin: 0; columns: 2; column-gap: var(--space-8);">
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>každodenní úklid společných prostor</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>ložní prádlo</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>ručníky do koupelny i na pláž</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>župan</li>
-            <li style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); padding: var(--space-1) 0; break-inside: avoid; display: flex; gap: var(--space-2);"><span style="color: var(--color-sage); flex-shrink: 0;">—</span>mýdlo a šampon</li>
+          <p class="services__label" style="margin-bottom: var(--space-3);">Součástí je také:</p>
+          <ul role="list" class="reservation-list">
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>každodenní úklid společných prostor</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>ložní prádlo</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>ručníky do koupelny i na pláž</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>župan</li>
+            <li class="reservation-list__item"><span class="reservation-list__dash">—</span>mýdlo a šampon</li>
           </ul>
         </div>
 
@@ -307,52 +197,51 @@
         class="venue-split__img"
       />
       <div class="venue-split__text">
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-6);">Místo konání</p>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 0.8rem + 1.8vw, 2.1rem); font-weight: 300; color: var(--color-dark-text); line-height: 1.45; margin-bottom: var(--space-8);">5 nocí v nádherné vile navržené právě pro retreaty — prostor pro odpočinek, propojení a obnovu.</p>
-        <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Soukromé koupelny &amp; sdílené pokoje</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>100 m² Yoga Shala &amp; venkovní prostor pro cvičení</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Posilovna, místnost pro masáže &amp; jacuzzi</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Plně vybavená kuchyň</li>
-          <li style="padding: var(--space-3) 0; font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Každodenní úklid společných prostor</li>
+        <p class="retreat-hero__label" style="margin-bottom: var(--space-6);">Místo konání</p>
+        <p class="retreat-split__quote" style="text-align: left; margin-bottom: var(--space-8);">5 nocí v nádherné vile navržené právě pro retreaty — prostor pro odpočinek, propojení a obnovu.</p>
+        <ul role="list" class="retreat-list">
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>Soukromé koupelny &amp; sdílené pokoje</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>100 m² Yoga Shala &amp; venkovní prostor pro cvičení</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>Posilovna, místnost pro masáže &amp; jacuzzi</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>Plně vybavená kuchyň</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom: none;"><span class="retreat-list__dash">—</span>Každodenní úklid společných prostor</li>
         </ul>
       </div>
     </div>
 
     <!-- ── Obrazová pauza — aktivity ──────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true" style="margin-top: var(--space-16);">
       <img
         src="assets/images/Shala.jpg"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
       />
     </div>
 
     <!-- ── Co není zahrnuto + Storno podmínky ──────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container">
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
         <div class="details-grid" data-reveal>
 
           <div>
-            <p class="services__label" style="margin-bottom: var(--space-8);">Co není zahrnuto v ceně</p>
-            <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Náklady na dopravu – letenky, transfer z letiště a další doprava<br><span style="font-size: var(--text-xs); font-style: italic;">(Pomoc s organizací transferu bude možná podle času příjezdu a velikosti skupiny.)</span></li>
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Doplňkové služby a aktivity – například masáže na místě, pronájem kol nebo vstupy na místní atrakce</li>
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Svačiny mezi jídly a alkoholické nápoje</li>
-              <li style="padding: var(--space-4) 0; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Osobní, zdravotní nebo cestovní pojištění<br><span style="font-size: var(--text-xs); font-style: italic;">(Cestovní pojištění včetně storna velmi doporučujeme.)</span></li>
+            <p class="section-label">Co není zahrnuto v ceně</p>
+            <ul role="list" class="retreat-list">
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span><span>Náklady na dopravu – letenky, transfer z letiště a další doprava<br><span style="font-size: var(--text-xs); font-style: italic;">(Pomoc s organizací transferu bude možná podle času příjezdu a velikosti skupiny.)</span></span></li>
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span>Doplňkové služby a aktivity – například masáže na místě, pronájem kol nebo vstupy na místní atrakce</li>
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span>Svačiny mezi jídly a alkoholické nápoje</li>
+              <li class="retreat-list__item" style="border-bottom: none;"><span class="retreat-list__dash">—</span><span>Osobní, zdravotní nebo cestovní pojištění<br><span style="font-size: var(--text-xs); font-style: italic;">(Cestovní pojištění včetně storna velmi doporučujeme.)</span></span></li>
             </ul>
           </div>
 
           <div>
-            <p class="services__label" style="margin-bottom: var(--space-8);">Storno podmínky</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">Při jakémkoliv zrušení účasti propadá nevratná záloha ve výši 500 €.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Při zrušení více než 6 týdnů před začátkem retreatu bude vráceno 50 % uhrazené částky (po odečtení nevratné zálohy).</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Při zrušení během posledních 6 týdnů před začátkem retreatu není možné poskytnout refundaci, protože v této fázi již bývají závazně uhrazeny náklady spojené s ubytováním, místem konání, organizací a týmem.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">Vyhrazujeme si právo retreat zrušit v případě, že nebude naplněn minimální počet účastníků. V takovém případě bude uhrazená částka vrácena v plné výši.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Pokud by došlo ke změně směnného kurzu o více než 5 %, může být cena odpovídajícím způsobem upravena. Cestovní pojištění včetně storno připojištění vždy doporučujeme při plánování vaší cesty.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Pokud zjistíme, že retreat není pro vás vhodnou volbou, vyhrazujeme si právo vaši rezervaci zrušit. V takovém případě vám budou všechny uhrazené platby vráceny v plné výši.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.75; font-style: italic;">Děkujeme za vaše pochopení a důvěru. Těšíme se, až vás přivítáme na tomto výjimečném společném zážitku.</p>
+            <p class="section-label">Storno podmínky</p>
+            <p style="font-size: var(--text-sm); font-weight: 500; line-height: 1.75; margin-bottom: var(--space-4);">Při jakémkoliv zrušení účasti propadá nevratná záloha ve výši 500 €.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Při zrušení více než 6 týdnů před začátkem retreatu bude vráceno 50 % uhrazené částky (po odečtení nevratné zálohy).</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Při zrušení během posledních 6 týdnů před začátkem retreatu není možné poskytnout refundaci, protože v této fázi již bývají závazně uhrazeny náklady spojené s ubytováním, místem konání, organizací a týmem.</p>
+            <p style="font-size: var(--text-sm); font-weight: 500; line-height: 1.75; margin-bottom: var(--space-4);">Vyhrazujeme si právo retreat zrušit v případě, že nebude naplněn minimální počet účastníků. V takovém případě bude uhrazená částka vrácena v plné výši.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Pokud by došlo ke změně směnného kurzu o více než 5 %, může být cena odpovídajícím způsobem upravena. Cestovní pojištění včetně storno připojištění vždy doporučujeme při plánování vaší cesty.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Pokud zjistíme, že retreat není pro vás vhodnou volbou, vyhrazujeme si právo vaši rezervaci zrušit. V takovém případě vám budou všechny uhrazené platby vráceny v plné výši.</p>
+            <p style="font-size: var(--text-sm); line-height: 1.75; font-style: italic;">Děkujeme za vaše pochopení a důvěru. Těšíme se, až vás přivítáme na tomto výjimečném společném zážitku.</p>
           </div>
 
         </div>
@@ -360,52 +249,51 @@
     </section>
 
     <!-- ── Obrazová pauza — krajina ───────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true">
       <img
         src="assets/images/Walk on the beach.png"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
       />
     </div>
 
     <!-- ── Co si odvezete ────────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>Co si odvezete</p>
-        <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal>
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Hlubší kontakt se sebou samou</strong><br>Odvezete si větší jasnost v tom, co skutečně potřebujete, po čem toužíte a jak si vytvořit více prostoru pro sebe – bez neustálého pocitu povinnosti, tlaku nebo potřeby vyhovět ostatním.</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>Co si odvezete</p>
+        <ul role="list" class="retreat-list">
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal>
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Hlubší kontakt se sebou samou</strong><br>Odvezete si větší jasnost v tom, co skutečně potřebujete, po čem toužíte a jak si vytvořit více prostoru pro sebe – bez neustálého pocitu povinnosti, tlaku nebo potřeby vyhovět ostatním.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="100">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Pevnější emoční a vnitřní rovnováhu</strong><br>Díky každodenní práci s dechem, pohybem, meditací a reflexí získáte nové nástroje pro uvolnění napětí, zklidnění mysli a vytvoření většího prostoru pro sebejistotu a klid.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="100">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Pevnější emoční a vnitřní rovnováhu</strong><br>Díky každodenní práci s dechem, pohybem, meditací a reflexí získáte nové nástroje pro uvolnění napětí, zklidnění mysli a vytvoření většího prostoru pro sebejistotu a klid.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="200">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Schopnost lépe vnímat své potřeby a stát si za nimi</strong><br>Naučíte se lépe rozpoznat, co potřebujete, vyjádřit to a respektovat své vlastní hranice. Méně přizpůsobování. Více autenticity. Odvezete si nové pohledy, praktické nástroje a větší důvěru ve vlastní schopnost žít způsobem, který odpovídá vašim hodnotám.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="200">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Schopnost lépe vnímat své potřeby a stát si za nimi</strong><br>Naučíte se lépe rozpoznat, co potřebujete, vyjádřit to a respektovat své vlastní hranice. Méně přizpůsobování. Více autenticity. Odvezete si nové pohledy, praktické nástroje a větší důvěru ve vlastní schopnost žít způsobem, který odpovídá vašim hodnotám.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="300">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Návyky, které regulují nervový systém, energii a vnitřní stabilitu</strong><br>Získáte praktiky, ke kterým se můžete vracet i po návratu domů – zejména v obdobích stresu nebo zvýšené zátěže.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="300">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Návyky, které regulují nervový systém, energii a vnitřní stabilitu</strong><br>Získáte praktiky, ke kterým se můžete vracet i po návratu domů – zejména v obdobích stresu nebo zvýšené zátěže.</p>
           </li>
-          <li style="padding: var(--space-6) 0; display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="400">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Nezapomenutelné vzpomínky a opravdová blízkost</strong><br>Čekají vás chvíle smíchu, klidu, sdílení, nových uvědomění i krásných zážitků. Odvezete si nejen fotografie a vzpomínky, ale také pocit hlubšího spojení – se sebou i s ostatními ženami.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6); border-bottom: none;" data-reveal data-delay="400">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Nezapomenutelné vzpomínky a opravdová blízkost</strong><br>Čekají vás chvíle smíchu, klidu, sdílení, nových uvědomění i krásných zážitků. Odvezete si nejen fotografie a vzpomínky, ale také pocit hlubšího spojení – se sebou i s ostatními ženami.</p>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- ── CTA ───────────────────────────────────────────────── -->
-    <section style="padding: var(--space-20) var(--space-8) var(--space-24); background: var(--color-bg-secondary);">
-      <div class="container" style="max-width: 680px; text-align: center;" data-reveal>
-        <p class="services__label" style="margin-bottom: var(--space-6);">Registrovat se a zaplatit</p>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem); font-weight: 300; color: var(--color-accent); line-height: 1.35; margin-bottom: var(--space-6);">Počet míst je záměrně omezen — aby retreat zachoval intimitu, která je pro něj tak důležitá.</p>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 50ch; margin: 0 auto var(--space-10); line-height: 1.85;">Zajistěte si místo zálohou 500 € ještě dnes. Zůstatek hradíte ve dvou etapách – přibližně 3 měsíce a 6 týdnů před začátkem retreatu.</p>
-        <a href="register-pay.html" class="btn btn--primary" style="font-size: var(--text-base); padding: var(--space-4) var(--space-10);">Registrovat se a zaplatit →</a>
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-6);">Máte otázky? <a href="mailto:info@marcelacrhonkova.cz" style="color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px;">Napište nám</a> — rádi poradíme.</p>
+    <section class="retreat-section retreat-section--alt" style="padding-block: var(--space-20) var(--space-24);">
+      <div class="retreat-section__inner retreat-section__inner--centered" data-reveal>
+        <p class="section-label">Registrovat se a zaplatit</p>
+        <p class="retreat-split__quote" style="font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem); margin-bottom: var(--space-6);">Počet míst je záměrně omezen — aby retreat zachoval intimitu, která je pro něj tak důležitá.</p>
+        <p style="font-size: var(--text-base); color: var(--color-text-muted); margin: 0 auto var(--space-10); line-height: 1.85;">Zajistěte si místo zálohou 500 € ještě dnes. Zůstatek hradíte ve dvou etapách – přibližně 3 měsíce a 6 týdnů před začátkem retreatu.</p>
+        <a href="register-pay.html" class="btn btn--primary">Registrovat se a zaplatit →</a>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-6);">Máte otázky? <a href="mailto:info@marcelacrhonkova.cz" style="color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px;">Napište nám</a> — rádi poradíme.</p>
         <a href="index.html" class="service-link service-link--back"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Zpět na hlavní stránku</a>
       </div>
     </section>
@@ -424,7 +312,7 @@
         <div>
           <p class="footer__col-label">Navigace</p>
           <ul class="footer__links" role="list">
-            <li><a href="index.html#about">O mně</a></li>
+            <li><a href="about.html">O mně</a></li>
             <li><a href="individual-sessions.html">Individuální sezení</a></li>
             <li><a href="webinars.html">Webináře</a></li>
             <li><a href="retreats.html">Retreaty</a></li>

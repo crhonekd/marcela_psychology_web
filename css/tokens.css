@@ -57,6 +57,6 @@
 
   /* Content widths */
   --content-narrow:  640px;
-  --content-default: 960px;
+  --content-default: 1200px;
   --content-wide:    1200px;
 }

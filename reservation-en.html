@@ -17,117 +17,6 @@
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <style>
-    /* ── Payment timeline ─────────────────────────────────── */
-    .payment-timeline {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--color-border);
-      margin-top: var(--space-10);
-    }
-    .payment-step {
-      padding: var(--space-8) var(--space-6);
-      border-right: 1px solid var(--color-border);
-    }
-    .payment-step:last-child { border-right: none; }
-    .payment-step__amount {
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 1rem + 2.5vw, 3rem);
-      font-weight: 300;
-      color: var(--color-terracotta);
-      line-height: 1;
-      margin-bottom: var(--space-3);
-    }
-    .payment-step__label {
-      font-family: var(--font-body);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-3);
-    }
-    .payment-step__desc {
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-    }
-    @media (max-width: 640px) {
-      .payment-timeline { grid-template-columns: 1fr; }
-      .payment-step { border-right: none; border-bottom: 1px solid var(--color-border); }
-      .payment-step:last-child { border-bottom: none; }
-    }
-
-    /* ── Includes grid ────────────────────────────────────── */
-    .include-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: var(--space-4);
-      max-width: 920px;
-    }
-    .include-item {
-      padding: var(--space-5) var(--space-6);
-      background: var(--color-bg);
-      border-left: 2px solid var(--color-sage);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-    }
-
-    /* ── Venue split ──────────────────────────────────────── */
-    .venue-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
-    .venue-split__img { width: 100%; height: auto; display: block; }
-    .venue-split__text {
-      padding: var(--space-12) var(--space-10);
-      background: var(--color-dark-bg);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    @media (max-width: 640px) {
-      .venue-split { grid-template-columns: 1fr; }
-      .venue-split__text { padding: var(--space-10) var(--space-6); }
-    }
-
-    /* ── Two-column details ───────────────────────────────── */
-    .details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-12);
-      max-width: 900px;
-    }
-    @media (max-width: 640px) {
-      .details-grid { grid-template-columns: 1fr; gap: var(--space-10); }
-    }
-
-    /* ── Cancellation table ───────────────────────────────── */
-    .policy-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    .policy-table tr { border-bottom: 1px solid var(--color-border); }
-    .policy-table tr:last-child { border-bottom: none; }
-    .policy-table td {
-      padding: var(--space-4) var(--space-2);
-      font-family: var(--font-body);
-      font-size: var(--text-sm);
-      color: var(--color-text);
-      line-height: 1.65;
-      vertical-align: top;
-    }
-    .policy-table td:first-child {
-      color: var(--color-text-muted);
-      padding-right: var(--space-6);
-      white-space: nowrap;
-      font-size: var(--text-xs);
-      padding-top: var(--space-5);
-    }
-  </style>
 </head>
 <body>
 
@@ -146,7 +35,7 @@
             <span></span>
           </button>
         </li>
-        <li><a href="en.html#about">About me</a></li>
+        <li><a href="about-en.html">About me</a></li>
         <li><a href="testimonials-en.html">Testimonials</a></li>
         <li><a href="en.html#services">Services</a></li>
         <li><a href="webinars-en.html">Webinars</a></li>
@@ -173,86 +62,87 @@
   <main id="main">
 
     <!-- ── Hero ──────────────────────────────────────────────── -->
-    <section style="position: relative; min-height: clamp(420px, 58vh, 700px); background: var(--color-dark-bg); overflow: hidden; display: flex; align-items: flex-end; padding-top: calc(var(--space-24) + 48px);">
+    <section class="retreat-hero">
       <img
         src="assets/images/retreat-hero.jpg"
         alt="Serene coastal landscape — the setting for The Reset Retreat"
         loading="eager"
-        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0.45;"
+        class="retreat-hero__bg"
+        style="opacity: 0.45;"
       />
-      <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(19,35,58,0.05) 0%, rgba(19,35,58,0.90) 100%);"></div>
-      <div class="container" style="position: relative; z-index: 1; width: 100%; padding-bottom: var(--space-16);">
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-4);">Reserve Your Place</p>
-        <h1 style="font-family: var(--font-display); font-size: clamp(2.2rem, 1rem + 4.5vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--color-dark-text); margin-bottom: var(--space-5); max-width: 22ch;">The Reset Retreat: Coming Home to Yourself</h1>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-6);">
-          <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(249,247,244,0.75); border: 1px solid rgba(249,247,244,0.3); padding: var(--space-2) var(--space-5); border-radius: 100px;">Coming Up</span>
-          <span style="display: inline-flex; align-items: center; font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; color: rgba(249,247,244,0.75); border: 1px solid rgba(249,247,244,0.3); padding: var(--space-2) var(--space-5); border-radius: 100px;">5 Nights &nbsp;·&nbsp; All-Inclusive</span>
+      <div class="retreat-hero__overlay"></div>
+      <div class="container retreat-hero__content">
+        <p class="retreat-hero__label">Reserve Your Place</p>
+        <h1 class="retreat-hero__title" style="max-width: 22ch;">The Reset Retreat: Coming Home to Yourself</h1>
+        <div class="retreat-hero__actions" style="margin-bottom: var(--space-6);">
+          <span class="retreat-pill retreat-pill--ghost">Coming Up</span>
+          <span class="retreat-pill retreat-pill--ghost">5 Nights &nbsp;·&nbsp; All-Inclusive</span>
         </div>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: var(--text-lg); color: rgba(249,247,244,0.75); line-height: 1.5; max-width: 44ch;">A therapeutic retreat for women entering a new season of life.</p>
+        <p class="retreat-hero__subtitle" style="max-width: 44ch;">A therapeutic retreat for women entering a new season of life.</p>
       </div>
     </section>
 
     <!-- ── Investment ─────────────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8) var(--space-12);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-6);" data-reveal>Your Investment</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>Your Investment</p>
 
-        <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-4); margin-bottom: var(--space-4);" data-reveal data-delay="100">
-          <span style="font-family: var(--font-display); font-size: clamp(3rem, 2rem + 3vw, 5.5rem); font-weight: 300; color: var(--color-accent); line-height: 1;">Full Price € 2,000,-</span>
+        <div data-reveal data-delay="100">
+          <span class="reservation-price">Full Price € 2,000,-</span>
         </div>
 
       </div>
     </section>
 
     <!-- ── To join us ──────────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8) var(--space-12); background: var(--color-bg-secondary);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>To join us</p>
-        <ol style="list-style: none; padding: 0; margin: 0;">
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal>
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">1.</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin: 0; padding-top: 0.25em;">Register by filling up the Registration Form</p>
+    <section class="retreat-section retreat-section--alt">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>To join us</p>
+        <ol class="retreat-steps">
+          <li class="retreat-steps__item" data-reveal>
+            <span class="retreat-steps__number">1.</span>
+            <p class="retreat-steps__desc" style="font-size: var(--text-base);">Register by filling up the Registration Form</p>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal data-delay="100">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">2.</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin: 0; padding-top: 0.25em;">Make your non-refundable deposit of € 500,-</p>
+          <li class="retreat-steps__item" data-reveal data-delay="100">
+            <span class="retreat-steps__number">2.</span>
+            <p class="retreat-steps__desc" style="font-size: var(--text-base);">Make your non-refundable deposit of € 500,-</p>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border);" data-reveal data-delay="200">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">3.</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin: 0; padding-top: 0.25em;">50% of your balance is due approximately 3 months before the retreat begins.</p>
+          <li class="retreat-steps__item" data-reveal data-delay="200">
+            <span class="retreat-steps__number">3.</span>
+            <p class="retreat-steps__desc" style="font-size: var(--text-base);">50% of your balance is due approximately 3 months before the retreat begins.</p>
           </li>
-          <li style="display: flex; gap: var(--space-6); padding: var(--space-6) 0;" data-reveal data-delay="300">
-            <span style="font-family: var(--font-display); font-size: clamp(2rem, 1.2rem + 2vw, 3rem); font-weight: 300; color: var(--color-terracotta); line-height: 1; flex-shrink: 0; width: 2.5rem;">4.</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.7; margin: 0; padding-top: 0.25em;">Your remaining balance is due by approximately 6 weeks before the retreat begins.</p>
+          <li class="retreat-steps__item" data-reveal data-delay="300">
+            <span class="retreat-steps__number">4.</span>
+            <p class="retreat-steps__desc" style="font-size: var(--text-base);">Your remaining balance is due by approximately 6 weeks before the retreat begins.</p>
           </li>
         </ol>
         <div style="margin-top: var(--space-10);" data-reveal data-delay="400">
-          <a href="register-pay-en.html" class="btn btn--primary" style="font-size: var(--text-base); padding: var(--space-4) var(--space-10);">Register and Pay →</a>
+          <a href="register-pay-en.html" class="btn btn--primary">Register and Pay →</a>
         </div>
       </div>
     </section>
 
     <!-- ── Collage image break ─────────────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true" style="overflow: hidden;">
       <img
         src="assets/images/zeny.png"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
+        style="display: block; margin-block: -18% -18%;"
       />
     </div>
 
     <!-- ── What's included ───────────────────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>What´s included</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>What´s included</p>
 
-        <div style="max-width: 920px; padding: var(--space-8); background: var(--color-bg-secondary); border-left: 2px solid var(--color-sage); margin-bottom: var(--space-6);" data-reveal>
-          <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-text-muted); margin-bottom: var(--space-4);">Accommodation</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">Stunning purpose-built retreat vila nestled in a serene location, (double occupancy) for 5 nights. Your home for comfort and connection, it's an ideal space for yoga, meditation, and wellness stay.</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-3);">You will enjoy shared rooms, 14 bathrooms, 100m² Yoga Shala, outdoor yoga platform, gym, massage room, jacuzzi, kitchen.</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-3);">Housekeeping daily (common areas)</p>
-          <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Bedding, bath towels, beach towels, bathrobe, soap and shampoo.</p>
+        <div class="reservation-accommodation" data-reveal>
+          <p class="services__label" style="margin-bottom: var(--space-4);">Accommodation</p>
+          <p style="font-size: var(--text-base); line-height: 1.75; margin-bottom: var(--space-4);">Stunning purpose-built retreat vila nestled in a serene location, (double occupancy) for 5 nights. Your home for comfort and connection, it's an ideal space for yoga, meditation, and wellness stay.</p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-3);">You will enjoy shared rooms, 14 bathrooms, 100m² Yoga Shala, outdoor yoga platform, gym, massage room, jacuzzi, kitchen.</p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-3);">Housekeeping daily (common areas)</p>
+          <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75;">Bedding, bath towels, beach towels, bathrobe, soap and shampoo.</p>
         </div>
 
         <div class="include-grid" data-reveal data-delay="100">
@@ -276,52 +166,51 @@
         class="venue-split__img"
       />
       <div class="venue-split__text">
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: var(--space-6);">The Venue</p>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.3rem, 0.8rem + 1.8vw, 2.1rem); font-weight: 300; color: var(--color-dark-text); line-height: 1.45; margin-bottom: var(--space-8);">Stunning purpose-built retreat vila nestled in a serene location — designed for rest, reflection, and renewal.</p>
-        <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>14 bathrooms &amp; shared rooms</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>100m² Yoga Shala &amp; outdoor yoga platform</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Gym, massage room &amp; jacuzzi</li>
-          <li style="padding: var(--space-3) 0; border-bottom: 1px solid rgba(249,247,244,0.1); font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Fully-equipped kitchen</li>
-          <li style="padding: var(--space-3) 0; font-family: var(--font-body); font-size: var(--text-sm); color: rgba(249,247,244,0.72); display: flex; gap: var(--space-4); align-items: baseline;"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Daily housekeeping of common areas</li>
+        <p class="retreat-hero__label" style="margin-bottom: var(--space-6);">The Venue</p>
+        <p class="retreat-split__quote" style="text-align: left; margin-bottom: var(--space-8);">Stunning purpose-built retreat vila nestled in a serene location — designed for rest, reflection, and renewal.</p>
+        <ul role="list" class="retreat-list">
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>14 bathrooms &amp; shared rooms</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>100m² Yoga Shala &amp; outdoor yoga platform</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>Gym, massage room &amp; jacuzzi</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom-color: rgba(249,247,244,0.1);"><span class="retreat-list__dash">—</span>Fully-equipped kitchen</li>
+          <li class="retreat-list__item" style="color: rgba(249,247,244,0.72); border-bottom: none;"><span class="retreat-list__dash">—</span>Daily housekeeping of common areas</li>
         </ul>
       </div>
     </div>
 
     <!-- ── Activities image break ─────────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true" style="margin-top: var(--space-16);">
       <img
         src="assets/images/Shala.jpg"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
       />
     </div>
 
     <!-- ── Not included + Cancellation ─────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container">
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
         <div class="details-grid" data-reveal>
 
           <div>
-            <p class="services__label" style="margin-bottom: var(--space-8);">What´s NOT INCLUDED</p>
-            <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Any travel cost - flight tickets, airport transfer, other transportation. (Help to arrange airport transfer is available depending on arrival time and group size)</li>
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Any extra services and activities - option to book a massage at the venue, rent bicycles, or other local entrance fees.</li>
-              <li style="padding: var(--space-4) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Between-meal snacks and alcoholic beverages</li>
-              <li style="padding: var(--space-4) 0; font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.65; display: flex; gap: var(--space-4);"><span style="color: var(--color-terracotta); flex-shrink: 0;">—</span>Personal, medical or trip cancellation insurance (highly recommended!)</li>
+            <p class="section-label">What´s NOT INCLUDED</p>
+            <ul role="list" class="retreat-list">
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span>Any travel cost - flight tickets, airport transfer, other transportation. (Help to arrange airport transfer is available depending on arrival time and group size)</li>
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span>Any extra services and activities - option to book a massage at the venue, rent bicycles, or other local entrance fees.</li>
+              <li class="retreat-list__item"><span class="retreat-list__dash">—</span>Between-meal snacks and alcoholic beverages</li>
+              <li class="retreat-list__item" style="border-bottom: none;"><span class="retreat-list__dash">—</span>Personal, medical or trip cancellation insurance (highly recommended!)</li>
             </ul>
           </div>
 
           <div>
-            <p class="services__label" style="margin-bottom: var(--space-8);">Cancellation policy</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">Any cancellation will result in a total loss of the € 500 EUR deposit.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Cancellations made more than six weeks before the retreat begins will receive a 50% refund, excluding the non-refundable deposit.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Cancellations made within the final six weeks before the retreat begins are non-refundable, as accommodation, venue, staffing, and other retreat costs will have already been committed.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">We reserve the right to cancel the trip if it is not meeting the trip minimum. (If we do so, you will be refunded in full.)</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; color: var(--color-text); line-height: 1.75; margin-bottom: var(--space-4);">Should the exchange rate vary more than 5%, the price will be subject to change. Trip cancellation insurance is always recommended whenever making travel plans.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">If we find that the trip is not a good fit for you, we reserve the right to cancel your reservation, in which case your payments will be fully refunded.</p>
-            <p style="font-family: var(--font-body); font-size: var(--text-sm); color: var(--color-text); line-height: 1.75; font-style: italic;">We appreciate your understanding and commitment. We can't wait to welcome you on this transformative journey!</p>
+            <p class="section-label">Cancellation policy</p>
+            <p style="font-size: var(--text-sm); font-weight: 500; line-height: 1.75; margin-bottom: var(--space-4);">Any cancellation will result in a total loss of the € 500 EUR deposit.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Cancellations made more than six weeks before the retreat begins will receive a 50% refund, excluding the non-refundable deposit.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">Cancellations made within the final six weeks before the retreat begins are non-refundable, as accommodation, venue, staffing, and other retreat costs will have already been committed.</p>
+            <p style="font-size: var(--text-sm); font-weight: 500; line-height: 1.75; margin-bottom: var(--space-4);">We reserve the right to cancel the trip if it is not meeting the trip minimum. (If we do so, you will be refunded in full.)</p>
+            <p style="font-size: var(--text-sm); font-weight: 500; line-height: 1.75; margin-bottom: var(--space-4);">Should the exchange rate vary more than 5%, the price will be subject to change. Trip cancellation insurance is always recommended whenever making travel plans.</p>
+            <p style="font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; margin-bottom: var(--space-4);">If we find that the trip is not a good fit for you, we reserve the right to cancel your reservation, in which case your payments will be fully refunded.</p>
+            <p style="font-size: var(--text-sm); line-height: 1.75; font-style: italic;">We appreciate your understanding and commitment. We can't wait to welcome you on this transformative journey!</p>
           </div>
 
         </div>
@@ -329,52 +218,51 @@
     </section>
 
     <!-- ── Landscape image break ──────────────────────────── -->
-    <div aria-hidden="true">
+    <div class="full-bleed-img" aria-hidden="true">
       <img
         src="assets/images/Walk on the beach.png"
         alt=""
         loading="lazy"
-        style="width: 100%; height: auto; display: block;"
       />
     </div>
 
     <!-- ── What you will take home ───────────────────────── -->
-    <section style="padding: var(--space-16) var(--space-8);">
-      <div class="container" style="max-width: 860px;">
-        <p class="services__label" style="margin-bottom: var(--space-10);" data-reveal>What you will take home:</p>
-        <ul role="list" style="list-style: none; padding: 0; margin: 0;">
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal>
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>A powerful reconnection with your true self</strong> — free from guilt, pressure, or pretending. You'll leave knowing what you need, what you want, and how to finally give it to yourself.</p>
+    <section class="retreat-section">
+      <div class="retreat-section__inner">
+        <p class="section-label" data-reveal>What you will take home:</p>
+        <ul role="list" class="retreat-list">
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal>
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>A powerful reconnection with your true self</strong> — free from guilt, pressure, or pretending. You'll leave knowing what you need, what you want, and how to finally give it to yourself.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="100">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Emotional and mental clarity</strong> — through daily practices in breathwork, movement, and meditation, you'll learn how to release what's been holding you back and create space for peace and confidence.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="100">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Emotional and mental clarity</strong> — through daily practices in breathwork, movement, and meditation, you'll learn how to release what's been holding you back and create space for peace and confidence.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="200">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>The strength to ask for what you need — and the courage to honor it</strong>. No more people-pleasing. No more hiding. You'll leave with the tools and mindset to live more unapologetically, from the inside out.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="200">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>The strength to ask for what you need — and the courage to honor it</strong>. No more people-pleasing. No more hiding. You'll leave with the tools and mindset to live more unapologetically, from the inside out.</p>
           </li>
-          <li style="padding: var(--space-6) 0; border-bottom: 1px solid var(--color-border); display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="300">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Lasting habits that support your nervous system, energy, and inner calm</strong> — so that when life gets overwhelming, you'll know exactly how to return to center.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6);" data-reveal data-delay="300">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Lasting habits that support your nervous system, energy, and inner calm</strong> — so that when life gets overwhelming, you'll know exactly how to return to center.</p>
           </li>
-          <li style="padding: var(--space-6) 0; display: flex; gap: var(--space-5); align-items: flex-start;" data-reveal data-delay="400">
-            <span style="color: var(--color-sage); flex-shrink: 0; font-size: 1.1em; margin-top: 0.2em;">●</span>
-            <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text); line-height: 1.75; margin: 0;"><strong>Unforgettable memories and deep connections</strong> — moments of laughter, stillness, breakthroughs, and beauty. You'll leave with new friendships, soulful stories, and photos that capture the feeling of finally coming home to yourself.</p>
+          <li class="retreat-list__item" style="align-items: flex-start; padding-block: var(--space-6); border-bottom: none;" data-reveal data-delay="400">
+            <span class="retreat-list__dash" style="color: var(--color-sage); font-size: 1.1em; margin-top: 0.2em;">●</span>
+            <p style="font-size: var(--text-base); line-height: 1.75; margin: 0;"><strong>Unforgettable memories and deep connections</strong> — moments of laughter, stillness, breakthroughs, and beauty. You'll leave with new friendships, soulful stories, and photos that capture the feeling of finally coming home to yourself.</p>
           </li>
         </ul>
       </div>
     </section>
 
     <!-- ── CTA ───────────────────────────────────────────────── -->
-    <section style="padding: var(--space-20) var(--space-8) var(--space-24); background: var(--color-bg-secondary);">
-      <div class="container" style="max-width: 680px; text-align: center;" data-reveal>
-        <p class="services__label" style="margin-bottom: var(--space-6);">Register and pay</p>
-        <p style="font-family: var(--font-display); font-style: italic; font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem); font-weight: 300; color: var(--color-accent); line-height: 1.35; margin-bottom: var(--space-6);">Spaces are intentionally limited to create the intimacy this retreat deserves.</p>
-        <p style="font-family: var(--font-body); font-size: var(--text-base); color: var(--color-text-muted); max-width: 50ch; margin: 0 auto var(--space-10); line-height: 1.85;">Secure your place with a € 500 deposit today. Your balance is due in two stages — approximately 3 months and 6 weeks before the retreat begins.</p>
-        <a href="register-pay-en.html" class="btn btn--primary" style="font-size: var(--text-base); padding: var(--space-4) var(--space-10);">Register and Pay →</a>
-        <p style="font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-6);">Questions before committing? <a href="mailto:info@marcelacrhonkova.cz" style="color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px;">Send us a message</a> — we're happy to help.</p>
+    <section class="retreat-section retreat-section--alt" style="padding-block: var(--space-20) var(--space-24);">
+      <div class="retreat-section__inner retreat-section__inner--centered" data-reveal>
+        <p class="section-label">Register and pay</p>
+        <p class="retreat-split__quote" style="font-size: clamp(1.6rem, 1rem + 2.2vw, 2.8rem); margin-bottom: var(--space-6);">Spaces are intentionally limited to create the intimacy this retreat deserves.</p>
+        <p style="font-size: var(--text-base); color: var(--color-text-muted); max-width: 50ch; margin: 0 auto var(--space-10); line-height: 1.85;">Secure your place with a € 500 deposit today. Your balance is due in two stages — approximately 3 months and 6 weeks before the retreat begins.</p>
+        <a href="register-pay-en.html" class="btn btn--primary">Register and Pay →</a>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-6);">Questions before committing? <a href="mailto:info@marcelacrhonkova.cz" style="color: var(--color-accent); text-decoration: underline; text-underline-offset: 3px;">Send us a message</a> — we're happy to help.</p>
         <a href="en.html" class="service-link service-link--back"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Back to home</a>
       </div>
     </section>
@@ -393,7 +281,7 @@
         <div>
           <p class="footer__col-label">Navigation</p>
           <ul class="footer__links" role="list">
-            <li><a href="en.html#about">About me</a></li>
+            <li><a href="about-en.html">About me</a></li>
             <li><a href="individual-sessions-en.html">Individual Sessions</a></li>
             <li><a href="webinars-en.html">Webinars</a></li>
             <li><a href="retreats-en.html">Retreats</a></li>

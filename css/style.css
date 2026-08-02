@@ -836,8 +836,11 @@
   }
 
   /* Hero */
+  .hero {
+    gap: 0;
+  }
   .hero__content {
-    padding: calc(var(--space-12) + 72px) var(--space-5) var(--space-10);
+    padding: var(--space-6) var(--space-5) var(--space-10);
   }
   .hero__image {
     aspect-ratio: 1536 / 920;

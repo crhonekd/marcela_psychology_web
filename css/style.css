@@ -2188,6 +2188,14 @@
   justify-content: center;
 }
 
+.venue-split__text .retreat-hero__label {
+  color: var(--color-terracotta);
+}
+
+.venue-split__text .retreat-split__quote {
+  color: var(--color-dark-text);
+}
+
 .details-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

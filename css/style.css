@@ -2382,3 +2382,24 @@
     margin-inline: auto;
   }
 }
+
+@media (max-width: 640px) {
+  .prose p,
+  .svc-content__inner p,
+  .bio__grid p,
+  .bio__grid .prose p,
+  .journey__prose p,
+  .about__body,
+  .booking-intro__inner p,
+  .booking-form-section__sub,
+  .about-cta__body,
+  .retreat-intro,
+  .retreat-pillar__desc,
+  .retreat-faq__answer,
+  .retreat-quote__body,
+  .retreat-steps__desc,
+  .retreat-cta__body,
+  .topic-list__desc {
+    text-align: left;
+  }
+}

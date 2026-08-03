@@ -2194,6 +2194,9 @@
 
 .venue-split__text .retreat-split__quote {
   color: var(--color-dark-text);
+  text-align: left;
+  max-width: none;
+  margin-inline: 0;
 }
 
 .details-grid {

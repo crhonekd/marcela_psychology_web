@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -102,10 +102,10 @@
       <div class="container">
 
         <header class="services__header" data-reveal>
-          <p class="services__label" id="services-heading">Jak mohu pomoci</p>
+          <h2 class="services__label" id="services-heading">Jak mohu pomoci</h2>
         </header>
 
-        <div class="services__grid">
+        <div class="services__grid services__grid--three">
 
           <article class="service-item" data-reveal data-delay="100">
             <div class="service-item__icon" aria-hidden="true">
@@ -116,7 +116,7 @@
                 <path d="m18 15-2-2"/><path d="m15 18-2-2"/>
               </svg>
             </div>
-            <h2 class="service-item__title">Individuální konzultace</h2>
+            <h3 class="service-item__title">Individuální konzultace</h3>
             <p class="service-item__desc">
               Bezpečný prostor pro hlubší sebepoznání, osobní růst a změnu. Společně se zaměřujeme na to, co je pro vás v daném období života skutečně důležité.
             </p>
@@ -131,7 +131,7 @@
                 <path d="M20.55 10.23A9 9 0 1 1 8 4.94"/>
               </svg>
             </div>
-            <h2 class="service-item__title" id="webinars">Webináře</h2>
+            <h3 class="service-item__title" id="webinars">Webináře</h3>
             <p class="service-item__desc">
               Online vzdělávací setkání zaměřená na témata, která ovlivňují náš každodenní život i pracovní prostředí.
               Podporuji jednotlivce, týmy i vedoucí pracovníky v lepším porozumění psychologickým aspektům moderní práce – od komunikace a vztahů na pracovišti až po zvládání stresu, změn a budování zdravější pracovní kultury.
@@ -146,7 +146,7 @@
                 <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
               </svg>
             </div>
-            <h2 class="service-item__title" id="retreats">Retreaty</h2>
+            <h3 class="service-item__title" id="retreats">Retreaty</h3>
             <p class="service-item__desc">
               Obohacující pobyty v přírodě, které vytvářejí prostor pro zpomalení, regeneraci a hlubší sebepoznání.
               Čas pro zastavení, znovunalezení rovnováhy a vědomější spojení se sebou samými.
@@ -154,26 +154,28 @@
             <a href="retreats.html" class="service-link">Nadcházející retreat <span class="service-link__arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="service-item" data-reveal data-delay="400">
-            <div class="service-item__icon" aria-hidden="true">
-              <!-- Leaf icon -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-              </svg>
-            </div>
-            <h2 class="service-item__title">Holistický přístup</h2>
-            <p class="service-item__desc">
-              Otázky, které si lidé kladou dnes, nejsou nové. Moderní věda nám pomáhá lépe porozumět odpovědím, ale samotné hledání smyslu, vnitřního klidu a porozumění sobě provází lidstvo už tisíce let.
-            </p>
-            <a href="holistic-approach.html" class="service-link">Zjistit více <span class="service-link__arrow" aria-hidden="true">→</span></a>
-          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Section C: About Preview -->
+    <!-- Section C: Holistic Approach -->
+    <section class="holistic" aria-labelledby="holistic-heading">
+      <div class="holistic__panel about__panel">
+        <p class="about__label" data-reveal>Filozofie péče</p>
+        <h2 class="about__headline" id="holistic-heading" data-reveal data-delay="100">
+          Holistický přístup
+        </h2>
+        <p class="about__body" data-reveal data-delay="200">
+          Otázky, které si lidé kladou dnes, nejsou nové. Moderní věda nám pomáhá lépe porozumět odpovědím, ale samotné hledání smyslu, vnitřního klidu a porozumění sobě provází lidstvo už tisíce let. Propojuji poznatky psychologie, neurovědy a celostního pohledu na člověka — protože skutečná změna nastane teprve tehdy, když jsou v souladu naše myšlenky, tělo a emoce.
+        </p>
+        <a href="holistic-approach.html" class="btn btn--ghost-dark" data-reveal data-delay="300">
+          Prozkoumat můj přístup →
+        </a>
+      </div>
+    </section>
+
+    <!-- Section D: About Preview -->
     <section id="about" class="about" aria-labelledby="about-heading">
 
       <div class="about__image">
@@ -206,6 +208,24 @@
         </a>
       </div>
 
+    </section>
+
+    <!-- Section E: Final CTA -->
+    <section class="final-cta" aria-labelledby="final-cta-heading">
+      <div class="about-cta">
+        <div class="about-cta__inner">
+          <p class="about-cta__label" data-reveal>Další krok</p>
+          <h2 class="about-cta__title" id="final-cta-heading" data-reveal data-delay="100">
+            Připraveni začít?
+          </h2>
+          <p class="about-cta__body" data-reveal data-delay="200">
+            Ne každý potřebuje terapii — ale každý si zaslouží místo, kde může být sám sebou.
+          </p>
+          <a href="book-session.html" class="btn btn--light" data-reveal data-delay="300">
+            Rezervovat konzultaci
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>

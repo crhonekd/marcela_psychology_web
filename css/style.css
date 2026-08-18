@@ -529,6 +529,10 @@
   gap: 0;
 }
 
+.services__grid--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .service-item {
   padding: var(--space-8) var(--space-8);
   border-right: 1px solid var(--color-border);
@@ -645,6 +649,13 @@
   justify-content: center;
   padding: var(--space-16) var(--space-12);
   padding-right: max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
+}
+
+/* Holistic Approach section — full-width dark panel (not in a 2-col grid) */
+.holistic__panel {
+  display: block;
+  padding: clamp(var(--space-12), 8vw, var(--space-20))
+           max(var(--space-12), calc((100vw - var(--content-wide)) / 2 + var(--space-8)));
 }
 
 .about__label {
@@ -807,6 +818,8 @@
   .service-item:nth-child(3) { border-right: 1px solid var(--color-border); }
   .service-item:nth-child(3),
   .service-item:nth-child(4) { border-bottom: none; }
+  /* 3-item grid: item 3 is alone in last row — no right border, no bottom border */
+  .services__grid--three .service-item:nth-child(3) { border-right: none; }
 
   /* About */
   .about { grid-template-columns: 1fr; }
@@ -916,6 +929,16 @@
 .page-hero__title em {
   font-style: italic;
   color: var(--color-accent);
+}
+
+/* Second-line subtitle inside a page hero H1 */
+.title-break {
+  display: block;
+  font-size: var(--text-xl);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  margin-top: 0.2em;
 }
 
 /* Thin sage rule used as a quiet section divider accent */

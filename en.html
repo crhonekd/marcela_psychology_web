@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap"
     rel="stylesheet"
   />
 
@@ -103,10 +103,10 @@
       <div class="container">
 
         <header class="services__header" data-reveal>
-          <p class="services__label" id="services-heading">How I can help</p>
+          <h2 class="services__label" id="services-heading">How I can help</h2>
         </header>
 
-        <div class="services__grid">
+        <div class="services__grid services__grid--three">
 
           <article class="service-item" data-reveal data-delay="100">
             <div class="service-item__icon" aria-hidden="true">
@@ -116,7 +116,7 @@
                 <path d="m18 15-2-2"/><path d="m15 18-2-2"/>
               </svg>
             </div>
-            <h2 class="service-item__title">Individual sessions</h2>
+            <h3 class="service-item__title">Individual sessions</h3>
             <p class="service-item__desc">
               A safe space for personal growth and deeper self-understanding. We work together on what matters most to you.
             </p>
@@ -130,7 +130,7 @@
                 <path d="M20.55 10.23A9 9 0 1 1 8 4.94"/>
               </svg>
             </div>
-            <h2 class="service-item__title" id="webinars">Webinars</h2>
+            <h3 class="service-item__title" id="webinars">Webinars</h3>
             <p class="service-item__desc">
               Online educational sessions for everyday life. Supporting people, teams, and leaders in navigating the human side of modern work.
             </p>
@@ -143,32 +143,35 @@
                 <path d="m8 3 4 8 5-5 5 15H2L8 3z"/>
               </svg>
             </div>
-            <h2 class="service-item__title" id="retreats">Retreats</h2>
+            <h3 class="service-item__title" id="retreats">Retreats</h3>
             <p class="service-item__desc">
               Transformative stays in nature. Space for stillness, regeneration, and genuine inner work.
             </p>
             <a href="retreats-en.html" class="service-link">Upcoming retreat <span class="service-link__arrow" aria-hidden="true">→</span></a>
           </article>
 
-          <article class="service-item" data-reveal data-delay="400">
-            <div class="service-item__icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
-                <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
-              </svg>
-            </div>
-            <h2 class="service-item__title">Holistic Approach</h2>
-            <p class="service-item__desc">
-              The questions humans struggle with today are not entirely new. We are exploring them with modern science, but they have been part of the human experience for thousands of years.
-            </p>
-            <a href="holistic-approach-en.html" class="service-link">Learn more <span class="service-link__arrow" aria-hidden="true">→</span></a>
-          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Section C: About Preview -->
+    <!-- Section C: Holistic Approach -->
+    <section class="holistic" aria-labelledby="holistic-heading">
+      <div class="holistic__panel about__panel">
+        <p class="about__label" data-reveal>Philosophy of care</p>
+        <h2 class="about__headline" id="holistic-heading" data-reveal data-delay="100">
+          Holistic Approach
+        </h2>
+        <p class="about__body" data-reveal data-delay="200">
+          The questions humans struggle with today are not entirely new. We are exploring them with modern science, but the search for meaning, inner peace, and self-understanding has been part of the human experience for thousands of years. I integrate psychology, neuroscience, and a holistic view of the person — because real change only happens when mind, body, and emotions are in alignment.
+        </p>
+        <a href="holistic-approach-en.html" class="btn btn--ghost-dark" data-reveal data-delay="300">
+          Explore my approach →
+        </a>
+      </div>
+    </section>
+
+    <!-- Section D: About Preview -->
     <section id="about" class="about" aria-labelledby="about-heading">
 
       <div class="about__image">
@@ -200,6 +203,24 @@
         </a>
       </div>
 
+    </section>
+
+    <!-- Section E: Final CTA -->
+    <section class="final-cta" aria-labelledby="final-cta-heading">
+      <div class="about-cta">
+        <div class="about-cta__inner">
+          <p class="about-cta__label" data-reveal>Next step</p>
+          <h2 class="about-cta__title" id="final-cta-heading" data-reveal data-delay="100">
+            Ready to begin?
+          </h2>
+          <p class="about-cta__body" data-reveal data-delay="200">
+            Not everyone needs therapy — but everyone deserves a place where they can be themselves.
+          </p>
+          <a href="book-session-en.html" class="btn btn--light" data-reveal data-delay="300">
+            Book a session
+          </a>
+        </div>
+      </div>
     </section>
 
   </main>

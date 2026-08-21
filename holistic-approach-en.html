@@ -63,7 +63,6 @@
     <!-- Page hero -->
     <section class="page-hero" aria-labelledby="approach-title">
       <div class="page-hero__inner">
-        <p class="page-hero__label" data-reveal>How I work</p>
         <h1 class="page-hero__title" id="approach-title" data-reveal data-delay="100">
           My Approach
         </h1>
@@ -75,7 +74,7 @@
     <section class="bio" aria-label="My approach to therapy">
       <div class="bio__grid">
         <div class="prose" data-reveal>
-          <p class="lead">
+          <p>
             I work with people who want to understand themselves more deeply and create lasting
             psychological change, not temporary symptom management.
           </p>
@@ -94,7 +93,7 @@
             experience.
           </p>
 
-          <h2 class="pullquote">Your brain is not a finished product. Neither are you.</h2>
+          <h2>Your brain is not a finished product. Neither are you.</h2>
           <p>
             Every thought you think. Every feeling you repeat. Every reaction you've practiced for years.
             They're not just habits — they're physical pathways in your brain, reinforced over time.
@@ -118,6 +117,12 @@
             When you stop running the same emotional programs on repeat, life begins to feel very
             different.
           </p>
+        </div>
+      </div>
+
+      <!-- Two-column: list + image side-by-side -->
+      <div class="bio__split">
+        <div class="bio__split-text prose">
           <ul>
             <li>You start trusting yourself.</li>
             <li>You respond calmly in situations that used to trigger you.</li>
@@ -136,26 +141,26 @@
           <p>The shift is not just emotional.</p>
           <p>People sleep better. Think clearer. Enjoy relationships more. Make better decisions.</p>
         </div>
+        <figure class="bio__split-image">
+          <img
+            src="assets/images/greek.jpg"
+            alt="Greek landscape evoking the ancient origins of philosophy and self-knowledge"
+            loading="lazy"
+            width="3024"
+            height="4032"
+          />
+        </figure>
       </div>
-      <figure class="full-bleed-img" style="margin-top: var(--space-10);">
-        <img
-          src="assets/images/greek.jpg"
-          alt="Greek landscape evoking the ancient origins of philosophy and self-knowledge"
-          loading="lazy"
-          width="3024"
-          height="4032"
-        />
-      </figure>
     </section>
 
     <!-- Closing CTA -->
     <section class="about-cta" aria-labelledby="cta-title">
       <div class="about-cta__inner">
-        <h2 class="about-cta__label" data-reveal>Let's begin together</h2>
+        <h2 id="cta-title" data-reveal>Let's begin together</h2>
         <p class="about-cta__body" data-reveal data-delay="200">
           Not everybody needs therapy, but everyone deserves a space where they can be themselves.
         </p>
-        <a href="book-session-en.html" class="btn btn--light" data-reveal data-delay="300">
+        <a href="book-session-en.html" class="btn btn--primary" data-reveal data-delay="300">
           Book a session
         </a>
         <a href="en.html" class="service-link service-link--back"><span class="service-link__arrow" style="transform: scaleX(-1); display: inline-block;" aria-hidden="true">→</span> Back to home</a>
